@@ -1,192 +1,263 @@
 <div align="center">
 
-<!-- Dynamic typing SVG -->
-<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=28&duration=4000&pause=1000&color=3B82F6&center=true&vCenter=true&random=false&width=600&lines=Hi+%F0%9F%91%8B%2C+I'm+Hamza+Bjibji;Full+Stack+Developer;Big+Data+Engineer;Cloud+%26+ML+Enthusiast" alt="Typing SVG" /></a>
+```
+██████╗      ██╗██╗██████╗      ██╗██╗    ██╗  ██╗ █████╗ ███╗   ███╗███████╗ █████╗ 
+██╔══██╗     ██║██║██╔══██╗     ██║██║    ██║  ██║██╔══██╗████╗ ████║╚════██║██╔══██╗
+██████╔╝     ██║██║██████╔╝     ██║██║    ███████║███████║██╔████╔██║    ██╔╝███████║
+██╔══██╗██   ██║██║██╔══██╗██   ██║██║    ██╔══██║██╔══██║██║╚██╔╝██║   ██╔╝ ██╔══██║
+██████╔╝╚█████╔╝██║██████╔╝╚█████╔╝██║    ██║  ██║██║  ██║██║ ╚═╝ ██║   ██║  ██║  ██║
+╚═════╝  ╚════╝ ╚═╝╚═════╝  ╚════╝ ╚═╝    ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝   ╚═╝  ╚═╝  ╚═╝
+```
+
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=28&duration=3000&pause=1000&color=00D4FF&center=true&vCenter=true&width=700&lines=%3C%2F%3E+AI+%26+Data+Engineer;%F0%9F%94%A5+Big+Data+Architect;%E2%9A%A1+Real-Time+Pipeline+Builder;%F0%9F%A4%96+ML+%26+MLOps+Practitioner;%F0%9F%8C%8D+Full-Stack+Developer" alt="Typing SVG" />
 
 <br/>
 
-<img src="https://komarev.com/ghpvc/?username=Bjibjihamza&label=Profile%20views&color=3b82f6&style=for-the-badge" alt="Profile views" />
+[![Profile Views](https://komarev.com/ghpvc/?username=Bjibjihamza&color=00d4ff&style=for-the-badge&label=PROFILE+VIEWS)](https://github.com/Bjibjihamza)
+[![GitHub followers](https://img.shields.io/github/followers/Bjibjihamza?label=Followers&style=for-the-badge&color=00d4ff)](https://github.com/Bjibjihamza)
+[![Repos](https://img.shields.io/badge/Repos-17-00d4ff?style=for-the-badge&logo=github)](https://github.com/Bjibjihamza?tab=repositories)
 
 </div>
 
 ---
 
-## About Me
+## `$ whoami`
 
-```yaml
-name: Hamza Bjibji
-location: Morocco
-role: Full Stack Developer & Big Data Engineer
-interests:
-  - Building end-to-end data pipelines
-  - Cloud-native applications
-  - Machine Learning & AI
-  - Real-time streaming systems
-currently_working_on: EDUPATH - An intelligent education platform
+```python
+class HamzaBjibji:
+    name        = "Bjibji Hamza"
+    role        = "AI & Data Engineer"
+    school      = "ENSA Tétouan — Big Data & Artificial Intelligence"
+    location    = "Tétouan, Morocco 🇲🇦"
+    birthday    = "September 28, 2003"
+    contact     = "hamzabjibji@gmail.com"
+    github      = "github.com/Bjibjihamza"
+
+    interests   = [
+        "Real-Time Data Pipelines 🔁",
+        "MLOps & Cloud Architecture ☁️",
+        "Full-Stack Engineering 🖥️",
+        "Cybersecurity Analytics 🛡️",
+        "Smart Energy Systems ⚡",
+    ]
+
+    current_focus = "Building EDUPATH — a full-stack math learning platform"
+
+    def say_hello(self):
+        return "I turn raw data into intelligent systems. Let's build something real."
 ```
-
-<img align="right" alt="Coding" width="320" src="https://raw.githubusercontent.com/abhisheknaiidu/abhisheknaiidu/master/code.gif"/>
-
-- I build **full-stack applications** and **big data pipelines**
-- I work with **Azure**, **Huawei Cloud**, and modern data tools
-- I'm passionate about **real-time streaming** with Kafka & Spark
-- I love turning raw data into **actionable insights**
-
-<br clear="both"/>
 
 ---
 
-## Tech Stack
+## `$ ls -la ~/expertise`
+
+<div align="center">
+
+| 🗄️ Data Engineering | 🤖 AI / Machine Learning | 💻 Full-Stack Dev |
+|:---:|:---:|:---:|
+| Real-Time Kafka Pipelines | Neural Networks (TensorFlow) | React 19 + Vite + Tailwind |
+| Apache Spark Streaming | Random Forest / Scikit-learn | Node.js + Express APIs |
+| Medallion Architecture | MLOps & Model Retraining | TypeScript + PostgreSQL |
+| Apache Iceberg / MinIO | Collaborative Filtering | Docker + CI/CD |
+| Data Warehouse Design | Time-Series Forecasting | JWT Auth & REST APIs |
+| ETL + Airflow DAGs | CVSS / Threat Analytics | MongoDB + Oracle |
+
+</div>
+
+---
+
+## `$ cat ~/tech-stack.json`
 
 <div align="center">
 
 ### Languages
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white)
 ![SQL](https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=postgresql&logoColor=white)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-
-### Frontend & Backend
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
-![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
-![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
 
 ### Big Data & Streaming
-![Apache Kafka](https://img.shields.io/badge/Apache%20Kafka-231F20?style=for-the-badge&logo=apachekafka&logoColor=white)
-![Apache Spark](https://img.shields.io/badge/Apache%20Spark-E25A1C?style=for-the-badge&logo=apachespark&logoColor=white)
-![Apache Airflow](https://img.shields.io/badge/Apache%20Airflow-017CEE?style=for-the-badge&logo=apacheairflow&logoColor=white)
-![Apache Cassandra](https://img.shields.io/badge/Apache%20Cassandra-1287B1?style=for-the-badge&logo=apachecassandra&logoColor=white)
+![Apache Kafka](https://img.shields.io/badge/Apache%20Kafka-231F20?style=for-the-badge&logo=apache-kafka&logoColor=white)
+![Apache Spark](https://img.shields.io/badge/Apache%20Spark-E25A1C?style=for-the-badge&logo=apache-spark&logoColor=white)
+![Apache Airflow](https://img.shields.io/badge/Apache%20Airflow-017CEE?style=for-the-badge&logo=apache-airflow&logoColor=white)
+![Apache Cassandra](https://img.shields.io/badge/Apache%20Cassandra-1287B1?style=for-the-badge&logo=apache-cassandra&logoColor=white)
 
-### Cloud & DevOps
-![Microsoft Azure](https://img.shields.io/badge/Microsoft%20Azure-0078D4?style=for-the-badge&logo=microsoftazure&logoColor=white)
-![Huawei Cloud](https://img.shields.io/badge/Huawei%20Cloud-FF0000?style=for-the-badge&logo=huawei&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+### Frontend
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
-### Databases
+### Backend & Databases
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
+![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
 ![Oracle](https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=oracle&logoColor=white)
 
-### ML & Data Science
+### Cloud & DevOps
+![Azure](https://img.shields.io/badge/Azure-0078D4?style=for-the-badge&logo=microsoft-azure&logoColor=white)
+![Huawei Cloud](https://img.shields.io/badge/Huawei%20Cloud-FF0000?style=for-the-badge&logo=huawei&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Nginx](https://img.shields.io/badge/Nginx-269539?style=for-the-badge&logo=nginx&logoColor=white)
+
+### ML & AI
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)
-![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white)
-![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white)
-![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
 
 </div>
 
 ---
 
-## Featured Projects
+## `$ git log --oneline --all` — Featured Projects
 
-<div align="center">
+<table>
+<tr>
+<td width="50%">
 
-<a href="https://github.com/Bjibjihamza/EDUPATH">
-  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=Bjibjihamza&repo=EDUPATH&theme=tokyonight&hide_border=true" />
-</a>
-<a href="https://github.com/Bjibjihamza/Real-Time-Car-Price-Recommendation-and-Prediction-System-with-Kafka-and-Spark">
-  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=Bjibjihamza&repo=Real-Time-Car-Price-Recommendation-and-Prediction-System-with-Kafka-and-Spark&theme=tokyonight&hide_border=true" />
-</a>
+### 🎓 [EDUPATH](https://github.com/Bjibjihamza/EDUPATH)
+> *Math learning platform — Most Active Project*
 
-<br/><br/>
+Full-stack monorepo with student app, admin dashboard & REST API.
+- React 19 + Vite + Tailwind 4 + KaTeX
+- Node.js + Express + PostgreSQL 16
+- JWT auth · Cloudflare R2 · Docker
+- **Status:** 🟢 Active (Apr 2026)
 
-<a href="https://github.com/Bjibjihamza/threat-intelligence-pipeline">
-  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=Bjibjihamza&repo=threat-intelligence-pipeline&theme=tokyonight&hide_border=true" />
-</a>
-<a href="https://github.com/Bjibjihamza/cloud-renewstation">
-  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=Bjibjihamza&repo=cloud-renewstation&theme=tokyonight&hide_border=true" />
-</a>
+</td>
+<td width="50%">
 
-<br/><br/>
+### 🚗 [Real-Time Car Price System](https://github.com/Bjibjihamza/Real-Time-Car-Price-Recommendation-and-Prediction-System-with-Kafka-and-Spark)
+> *Big Data Pipeline · 3 Forks*
 
-<a href="https://github.com/Bjibjihamza/azure-smart-estate">
-  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=Bjibjihamza&repo=azure-smart-estate&theme=tokyonight&hide_border=true" />
-</a>
-<a href="https://github.com/Bjibjihamza/smart-estate-recommender-valuator">
-  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=Bjibjihamza&repo=smart-estate-recommender-valuator&theme=tokyonight&hide_border=true" />
-</a>
+End-to-end real-time pipeline with ML price prediction.
+- Kafka → Spark → Cassandra
+- TensorFlow Neural Network
+- Airflow orchestration · Collaborative Filtering
+- **Status:** 🟡 Stable
 
-<br/><br/>
+</td>
+</tr>
+<tr>
+<td width="50%">
 
-<a href="https://github.com/Bjibjihamza/Medsecure">
-  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=Bjibjihamza&repo=Medsecure&theme=tokyonight&hide_border=true" />
-</a>
-<a href="https://github.com/Bjibjihamza/Club-Site">
-  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=Bjibjihamza&repo=Club-Site&theme=tokyonight&hide_border=true" />
-</a>
+### 🛡️ [Threat Intelligence Pipeline](https://github.com/Bjibjihamza/threat-intelligence-pipeline)
+> *ETL Data Warehouse · ⭐ 4 Stars*
 
-</div>
+CVE data warehouse covering 313K+ vulnerabilities (2002–2025).
+- Medallion Bronze/Silver/Gold architecture
+- Live Telegram scraping (Telethon)
+- PostgreSQL DWH · Tableau/Metabase ready
+- **Status:** 🟡 Stable
+
+</td>
+<td width="50%">
+
+### ⚡ [RenewStation — Huawei Cloud](https://github.com/Bjibjihamza/renewstation-huawei-cloud)
+> *AI Energy Management · R² = 99.8%*
+
+Predicts electricity across 17 buildings with ±149W accuracy.
+- RandomForest · 278K training points
+- 7-day hourly forecasting
+- Airflow MLOps retrain pipeline
+- **Status:** 🟡 Stable
+
+</td>
+</tr>
+<tr>
+<td width="50%">
+
+### 🏠 [Smart Estate Recommender](https://github.com/Bjibjihamza/smart-estate-recommender-valuator)
+> *Streaming Real Estate Pipeline*
+
+Production-ready Avito/Mubawab scraper with modern lakehouse.
+- Kafka (KRaft) → Spark Streaming → Iceberg
+- MinIO object storage (S3-compatible)
+- 31-column SILVER layer
+- **Status:** 🟡 Stable
+
+</td>
+<td width="50%">
+
+### 🚕 [Car Rental BI Platform](https://github.com/Bjibjihamza/car-rental-bi-platform)
+> *Enterprise BI + IoT Telemetry*
+
+Full BI platform with real-time IoT monitoring across 5 Moroccan cities.
+- Oracle 21c XE · Medallion Architecture
+- Real-time GPS, speed, fuel tracking
+- Digital Twin replay from telemetry
+- **Status:** 🟢 Active
+
+</td>
+</tr>
+</table>
+
+> 📂 *And 12 more repos — [see them all →](https://github.com/Bjibjihamza?tab=repositories)*
 
 ---
 
-## All Repositories
+## `$ tail -f ~/growth.log` — Timeline
 
-| Project | Description | Tech |
-|---------|-------------|------|
-| [EDUPATH](https://github.com/Bjibjihamza/EDUPATH) | Intelligent education platform | JavaScript |
-| [Real-Time Car Price System](https://github.com/Bjibjihamza/Real-Time-Car-Price-Recommendation-and-Prediction-System-with-Kafka-and-Spark) | Big data car recommendation & price prediction pipeline with Kafka, Spark, Cassandra & TensorFlow | JavaScript, Python |
-| [Threat Intelligence Pipeline](https://github.com/Bjibjihamza/threat-intelligence-pipeline) | ETL pipeline for CVE data warehouse with medallion architecture (Bronze/Silver/Gold) | Python, PostgreSQL |
-| [Cloud RenewStation](https://github.com/Bjibjihamza/cloud-renewstation) | Cloud-native AI-powered energy management platform on Huawei Cloud | JavaScript |
-| [RenewStation Huawei Cloud](https://github.com/Bjibjihamza/renewstation-huawei-cloud) | Energy management with real-time monitoring & 7-day forecasting | Jupyter Notebook |
-| [Azure Smart Estate](https://github.com/Bjibjihamza/azure-smart-estate) | End-to-End Azure Data Engineering and MLOps Pipeline for Real Estate Analytics | Python |
-| [Smart Estate Recommender](https://github.com/Bjibjihamza/smart-estate-recommender-valuator) | Real estate pipeline with Kafka, Spark Streaming & Apache Iceberg | Jupyter Notebook, Docker |
-| [Real Estate Azure Pipeline](https://github.com/Bjibjihamza/real-estate-azure-pipeline) | Real estate scraper for Avito & Mubawab listings | Jupyter Notebook |
-| [Car Rental BI Platform](https://github.com/Bjibjihamza/car-rental-bi-platform) | Business Intelligence platform for car rental analytics | Jupyter Notebook |
-| [MedSecure](https://github.com/Bjibjihamza/Medsecure) | Medical security application with MongoDB backend | JavaScript |
-| [Club-Site](https://github.com/Bjibjihamza/Club-Site) | Club website built with modern TypeScript stack | TypeScript |
-| [CarRental Oracle WPF](https://github.com/Bjibjihamza/CarRental.Oracle.Wpf) | Desktop car rental application with Oracle database | C# |
-| [NovaDrive](https://github.com/Bjibjihamza/NovaDrive) | Car-related web application | JavaScript |
-| [Portfolio](https://github.com/Bjibjihamza/Portfolio) | Personal portfolio website | TypeScript |
-| [Avito Moteur Scraping](https://github.com/Bjibjihamza/avito_moteur_scraping) | Web scraping tool for Avito car listings | Python |
-| [Code Source Scraper](https://github.com/Bjibjihamza/Code_Source_Scraper) | Extract HTML, CSS, JS from any website (static & dynamic) | Python, Selenium |
-| [ABR Watches](https://github.com/Bjibjihamza/abrwatches) | Watch e-commerce platform | JavaScript |
+```
+2024-07 ▶ First commit. ABR Watches — e-commerce with vanilla JS
+2025-02 ▶ NovaDrive + Code Source Scraper — tooling & frontend
+2025-04 ▶ Kafka enters the chat. Real-Time Car Price System launches
+2025-06 ▶ First team project — Club-Site (3 devs)
+2025-10 ▶ Big bang: Threat Intel Pipeline ⭐⭐⭐⭐ + CarRental WPF + Car BI
+2025-11 ▶ Full lakehouse stack: Iceberg + MinIO + Spark Streaming
+2025-12 ▶ RenewStation ships: 99.8% R² on energy prediction
+2026-02 ▶ Azure MLOps pipeline for real estate analytics
+2026-04 ▶ EDUPATH goes live — React 19, 2.8M+ lines of JS
+           ↑ Still compiling...
+```
 
 ---
 
-## GitHub Stats
+## `$ htop` — Stats
 
 <div align="center">
 
-<img width="49%" src="https://github-readme-stats.vercel.app/api?username=Bjibjihamza&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" alt="GitHub Stats" />
-<img width="49%" src="https://github-readme-streak-stats.herokuapp.com/?user=Bjibjihamza&theme=tokyonight&hide_border=true" alt="GitHub Streak" />
+<img height="160" src="https://github-readme-stats.vercel.app/api?username=Bjibjihamza&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&bg_color=0d1117&title_color=00d4ff&icon_color=00d4ff&text_color=ffffff" />
+<img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Bjibjihamza&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=00d4ff&text_color=ffffff" />
 
 <br/>
 
-<img width="40%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Bjibjihamza&layout=compact&theme=tokyonight&hide_border=true&langs_count=10" alt="Top Languages" />
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=Bjibjihamza&theme=tokyonight&hide_border=true&background=0d1117&ring=00d4ff&fire=00d4ff&currStreakLabel=00d4ff" />
 
 </div>
 
 ---
 
-## Activity Graph
+## `$ ping hamza` — Let's Connect
 
 <div align="center">
 
-[![Hamza's GitHub Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=Bjibjihamza&theme=tokyo-night&hide_border=true&area=true)](https://github.com/Bjibjihamza)
-
-</div>
-
----
-
-## Connect With Me
-
-<div align="center">
-
+[![Email](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:hamzabjibji@gmail.com)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Bjibjihamza)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/hamza-bjibji)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:hamzabjibji@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/hamzabjibji)
+[![Phone](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](tel:+212636376992)
+
+<br/>
+
+```
+📍 Tétouan, Morocco
+📅 Open to: Internships · Freelance · Collaborations
+🎯 Seeking: Data Engineering · MLOps · Full-Stack roles
+```
+
+<br/>
+
+*"I don't just write code — I architect systems that think."*
+
+<br/>
+
+![Snake animation](https://raw.githubusercontent.com/Bjibjihamza/Bjibjihamza/output/github-contribution-grid-snake-dark.svg)
 
 </div>
 
 ---
 
 <div align="center">
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=3b82f6&height=100&section=footer" width="100%"/>
-
+<sub>Built with ☕ and too many Kafka consumers · Last updated April 2026</sub>
 </div>
