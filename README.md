@@ -27,7 +27,7 @@
   <table>
   <tr>
   <td>
-  <img src="./assets/ascii-me.png" width="380" alt="ascii-me" />
+  <img src="./assets/ascii-me-3.png" width="380" alt="ascii-me" />
   </td>
   <td>
   <picture>
