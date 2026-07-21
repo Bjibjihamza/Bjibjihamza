@@ -537,6 +537,14 @@ if __name__ == '__main__':
             contrib_data, follower_data, loc_for_svg
         )
 
+        # Rebuild seamless whoami card (portrait + panel, one background)
+        try:
+            import subprocess
+            import sys
+            subprocess.check_call([sys.executable, "scripts/build_whoami_card.py"])
+        except Exception as card_err:
+            print('whoami-card build skipped:', card_err)
+
         print('Total GitHub GraphQL API calls:', '{:>3}'.format(sum(QUERY_COUNT.values())))
         for funct_name, count in QUERY_COUNT.items():
             print('{:<28}'.format('   ' + funct_name + ':'), '{:>6}'.format(count))

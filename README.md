@@ -24,20 +24,7 @@
 ## `$ whoami`
 
 <div align="center">
-  <table>
-  <tr>
-  <td>
-  <img src="./assets/ascii-me-3.png" width="380" alt="ascii-me" />
-  </td>
-  <td>
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./dark_mode.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="./light_mode.svg" />
-    <img alt="hamza@bjibji" src="./dark_mode.svg" width="600" />
-  </picture>
-  </td>
-  </tr>
-  </table>
+  <img src="./assets/whoami-card.png" alt="hamza@bjibji" width="980" />
 </div>
 
 ---
