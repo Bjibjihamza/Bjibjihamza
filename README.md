@@ -1,16 +1,16 @@
-﻿<div align="center">
-  <img src="./assets/brand-banner.svg" alt="Hamza Bjibji" width="980" />
-  <br/><br/>
+﻿
+
+<div align="center">
+  <img src="./assets/whoami-card.png" alt="hamza@bjibji whoami card" width="980" />
+</div>
+<br/>
+ 
+<div align="center">
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&duration=3000&pause=800&color=A5D6FF&center=true&vCenter=true&width=700&lines=AI+%26+Data+Engineer;Building+real-time+pipelines;MLOps+%26+Full-Stack" alt="Typing" />
   <br/>
   <a href="https://github.com/Bjibjihamza"><img src="https://komarev.com/ghpvc/?username=Bjibjihamza&label=Profile%20views&color=ffa657&style=flat-square" alt="views"/></a>
 </div>
 
-<br/>
-
-<div align="center">
-  <img src="./assets/whoami-card.png" alt="hamza@bjibji whoami card" width="980" />
-</div>
 
 ---
 
