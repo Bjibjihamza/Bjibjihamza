@@ -446,6 +446,25 @@ def formatter(query_type, difference, funct_return=False, whitespace=0):
     return funct_return
 
 
+def read_cache_totals(comment_size=7):
+    """Sum commits/LOC from cache file. Safe fallback when live queries fail."""
+    filename = 'cache/' + hashlib.sha256(USER_NAME.encode('utf-8')).hexdigest() + '.txt'
+    adds = deletes = commits = 0
+    try:
+        with open(filename, 'r') as f:
+            data = f.readlines()[comment_size:]
+        for line in data:
+            parts = line.split()
+            if len(parts) < 5:
+                continue
+            commits += int(parts[2])
+            adds += int(parts[3])
+            deletes += int(parts[4])
+    except FileNotFoundError:
+        pass
+    return commits, adds, deletes
+
+
 if __name__ == '__main__':
     """
     Bjibji Hamza (Bjibjihamza)
@@ -458,35 +477,65 @@ if __name__ == '__main__':
         age_data, age_time = perf_counter(daily_readme, datetime.datetime(2003, 9, 28))
         formatter('age calculation', age_time)
 
-        # OWNER-only first: fewer token permissions needed than COLLABORATOR/ORG
+        # Contribution-calendar commits (reliable even when LOC cache is partial)
+        try:
+            commit_data, commit_time = perf_counter(
+                graph_commits, acc_date, datetime.datetime.utcnow().isoformat() + 'Z'
+            )
+            formatter('commit count (calendar)', commit_time)
+        except Exception as e:
+            print('graph_commits failed, using cache:', e)
+            commit_data, _, _ = read_cache_totals(7)
+            commit_time = 0.0
+
+        # LOC from owned repos (cached). Fall back to existing cache totals on error.
         try:
             total_loc, loc_time = perf_counter(loc_query, ['OWNER'], 7)
             formatter('LOC (cached)', loc_time) if total_loc[-1] else formatter('LOC (no cache)', loc_time)
-            commit_data, commit_time = perf_counter(commit_counter, 7)
-            formatter('commit count', commit_time)
         except Exception as loc_err:
-            print('LOC/commit query failed (continuing with placeholders):', loc_err)
-            total_loc = ['0', '0', '0', True]
-            commit_data, commit_time = 0, 0.0
+            print('LOC query failed, using cache totals:', loc_err)
+            _, adds, deletes = read_cache_totals(7)
+            total_loc = [adds, deletes, adds - deletes, True]
+            loc_time = 0.0
+
+        # If live LOC still looks empty but cache has data, prefer cache
+        cached_commits, cached_adds, cached_dels = read_cache_totals(7)
+        if isinstance(total_loc[0], int) and total_loc[0] == 0 and cached_adds > 0:
+            total_loc = [cached_adds, cached_dels, cached_adds - cached_dels, True]
+        if commit_data == 0 and cached_commits > 0:
+            commit_data = cached_commits
 
         star_data, star_time = perf_counter(graph_repos_stars, 'stars', ['OWNER'])
         formatter('star count', star_time)
         repo_data, repo_time = perf_counter(graph_repos_stars, 'repos', ['OWNER'])
         formatter('repo count', repo_time)
         try:
-            contrib_data, contrib_time = perf_counter(graph_repos_stars, 'repos', ['OWNER', 'COLLABORATOR', 'ORGANIZATION_MEMBER'])
+            contrib_data, contrib_time = perf_counter(
+                graph_repos_stars, 'repos', ['OWNER', 'COLLABORATOR', 'ORGANIZATION_MEMBER']
+            )
         except Exception:
             contrib_data, contrib_time = repo_data, 0.0
         formatter('contrib count', contrib_time)
         follower_data, follower_time = perf_counter(follower_getter, USER_NAME)
         formatter('follower count', follower_time)
 
-        if isinstance(total_loc[0], int):
-            for index in range(len(total_loc)-1):
-                total_loc[index] = '{:,}'.format(total_loc[index])
+        loc_for_svg = list(total_loc[:-1])
+        for index in range(len(loc_for_svg)):
+            if isinstance(loc_for_svg[index], int):
+                loc_for_svg[index] = '{:,}'.format(loc_for_svg[index])
 
-        svg_overwrite('dark_mode.svg', age_data, commit_data, star_data, repo_data, contrib_data, follower_data, total_loc[:-1])
-        svg_overwrite('light_mode.svg', age_data, commit_data, star_data, repo_data, contrib_data, follower_data, total_loc[:-1])
+        print(
+            f'Writing SVG → commits={commit_data}, '
+            f'repos={repo_data}, stars={star_data}, followers={follower_data}, loc={loc_for_svg}'
+        )
+        svg_overwrite(
+            'dark_mode.svg', age_data, commit_data, star_data, repo_data,
+            contrib_data, follower_data, loc_for_svg
+        )
+        svg_overwrite(
+            'light_mode.svg', age_data, commit_data, star_data, repo_data,
+            contrib_data, follower_data, loc_for_svg
+        )
 
         print('Total GitHub GraphQL API calls:', '{:>3}'.format(sum(QUERY_COUNT.values())))
         for funct_name, count in QUERY_COUNT.items():
