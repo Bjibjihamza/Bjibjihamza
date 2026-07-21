@@ -8,7 +8,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 ROOT = Path(__file__).resolve().parent.parent
 ASSETS = ROOT / "assets"
-PORTRAIT = ASSETS / "ascii-me-3.png"
+PORTRAIT = ASSETS / "ascii-magic-2.png"
 OUT = ASSETS / "whoami-card.png"
 
 BG = (22, 27, 34)  # #161b22
