@@ -197,15 +197,12 @@ def build_card() -> Path:
         ("Uptime", stats["age"]),
         ("Host", "ENSA Tetouan — Big Data & AI"),
         ("Kernel", "AI & Data Engineer"),
-        ("IDE", "Cursor, VS Code"),
     ]:
         draw_kv_row(draw, x, y, label, value, font, right_x)
         y += lh
 
     y += lh
     for label, value in [
-        ("Languages.Programming", "Python, JS, TypeScript, C#, SQL"),
-        ("Languages.Computer", "HTML, CSS, JSON, YAML, Docker"),
         ("Languages.Real", "Arabic, French, English"),
     ]:
         draw_kv_row(draw, x, y, label, value, font, right_x)
@@ -213,8 +210,8 @@ def build_card() -> Path:
 
     y += lh
     for label, value in [
-        ("Interests.Software", "Pipelines, MLOps, Full-Stack"),
-        ("Interests.Domains", "Cybersecurity, Smart Energy"),
+        ("Interests.Software", "Pipelines, MLOps, Real-time"),
+        ("Interests.Domains", "AI, Big Data, Smart Energy"),
     ]:
         draw_kv_row(draw, x, y, label, value, font, right_x)
         y += lh
