@@ -9,6 +9,11 @@
 ╚═════╝  ╚════╝ ╚═╝╚═════╝  ╚════╝ ╚═╝    ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝   ╚═╝  ╚═╝  ╚═╝
 ```
 
+
+<div align="center">
+  <img src="./assets/whoami-card.png" alt="hamza@bjibji" width="980" />
+</div>
+
 <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=28&duration=3000&pause=1000&color=00D4FF&center=true&vCenter=true&width=700&lines=%3C%2F%3E+AI+%26+Data+Engineer;%F0%9F%94%A5+Big+Data+Architect;%E2%9A%A1+Real-Time+Pipeline+Builder;%F0%9F%A4%96+ML+%26+MLOps+Practitioner;%F0%9F%8C%8D+Full-Stack+Developer" alt="Typing SVG" />
 
 <br/>
@@ -20,9 +25,6 @@
 </div>
 
 
-<div align="center">
-  <img src="./assets/whoami-card.png" alt="hamza@bjibji" width="980" />
-</div>
 
 ---
 
