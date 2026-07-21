@@ -1,4 +1,4 @@
-"""Compose one seamless whoami card: portrait + Andrew-style aligned panel."""
+"""Compose one seamless whoami card: portrait + Andrew-style pixel-aligned panel."""
 from __future__ import annotations
 
 from pathlib import Path
@@ -11,33 +11,29 @@ ASSETS = ROOT / "assets"
 PORTRAIT = ASSETS / "ascii-magic-2.png"
 OUT = ASSETS / "whoami-card.png"
 
-BG = (22, 27, 34)  # #161b22
+BG = (22, 27, 34)
 FG = (201, 209, 217)
-KEY = (255, 166, 87)  # #ffa657
-VAL = (165, 214, 255)  # #a5d6ff
-CC = (97, 110, 127)  # #616e7f
+KEY = (255, 166, 87)
+VAL = (165, 214, 255)
+CC = (97, 110, 127)
 ADD = (63, 185, 80)
 DEL = (248, 81, 73)
 
 H = 530
 PAD = 20
 PORTRAIT_MAX_W = 360
-# Panel wide enough for full Andrew-style lines
 PANEL_CHARS = 78
 GAP = 28
-
-# Character column where VALUES start (Andrew-style justified layout)
-VALUE_COL = 34
+VALUE_COL = 34  # char column → converted to pixels for perfect alignment
 
 
 def load_font(size: int = 15) -> ImageFont.ImageFont:
-    candidates = [
+    for p in (
         Path(r"C:\Windows\Fonts\consola.ttf"),
         Path(r"C:\Windows\Fonts\CascadiaMono.ttf"),
         Path("/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf"),
         Path("/usr/share/fonts/truetype/liberation/LiberationMono-Regular.ttf"),
-    ]
-    for p in candidates:
+    ):
         if p.exists():
             return ImageFont.truetype(str(p), size)
     return ImageFont.load_default()
@@ -51,7 +47,6 @@ def svg_text(root, eid: str, default: str = "") -> str:
 
 
 def read_stats_from_svg() -> dict[str, str]:
-    path = ROOT / "dark_mode.svg"
     defaults = {
         "age": "22 years, 9 months, 23 days",
         "repos": "23",
@@ -63,6 +58,7 @@ def read_stats_from_svg() -> dict[str, str]:
         "loc_add": "92,404",
         "loc_del": "23,489",
     }
+    path = ROOT / "dark_mode.svg"
     if not path.exists():
         return defaults
     root = etree.parse(str(path)).getroot()
@@ -82,170 +78,173 @@ def read_stats_from_svg() -> dict[str, str]:
 
 def prepare_portrait(img: Image.Image, threshold: int = 16) -> Image.Image:
     rgba = img.convert("RGBA")
-    pixels = list(rgba.getdata())
     out = []
-    for r, g, b, a in pixels:
+    for r, g, b, a in rgba.getdata():
         if a < 40 or (r <= threshold and g <= threshold and b <= threshold):
             out.append((0, 0, 0, 0))
         else:
             out.append((r, g, b, 255))
     rgba.putdata(out)
     bbox = rgba.getbbox()
-    if bbox:
-        rgba = rgba.crop(bbox)
-    return rgba
+    return rgba.crop(bbox) if bbox else rgba
 
 
-def char_w(font: ImageFont.ImageFont) -> float:
-    """Average monospace advance."""
-    bbox = font.getbbox("M")
-    return float(bbox[2] - bbox[0])
-
-
-def draw_parts(
-    draw: ImageDraw.ImageDraw,
-    x: int,
-    y: int,
-    parts: list[tuple[str, tuple[int, int, int]]],
-    font: ImageFont.ImageFont,
-) -> None:
+def draw_parts(draw, x, y, parts, font) -> None:
     cx = x
     for text, color in parts:
         draw.text((cx, y), text, fill=color, font=font)
         cx += font.getlength(text)
 
 
-def dots_to(label_plain: str, value_col: int = VALUE_COL) -> str:
-    """Andrew-style: ' ...... ' padding so values share one vertical column."""
-    # prefix is ". {label}:"
-    prefix_len = 2 + len(label_plain) + 1  # ". " + label + ":"
-    pad = max(1, value_col - prefix_len)
-    return " " + ("." * pad) + " "
+def draw_kv_row(draw, x, y, label, value, font, value_x) -> None:
+    """Andrew-style row with value locked to a fixed pixel X."""
+    draw.text((x, y), ". ", fill=CC, font=font)
+    cx = x + font.getlength(". ")
 
-
-def row_kv(label: str, value: str) -> list[tuple[str, tuple[int, int, int]]]:
-    """Single label (may contain dots like Languages.Programming)."""
-    # Color dotted labels: Languages.Programming → Languages orange, . gray, Programming orange
-    parts: list[tuple[str, tuple[int, int, int]]] = [(". ", CC)]
     if "." in label:
         left, right = label.split(".", 1)
-        parts += [(left, KEY), (".", FG), (right, KEY), (":", KEY)]
+        draw.text((cx, y), left, fill=KEY, font=font)
+        cx += font.getlength(left)
+        draw.text((cx, y), ".", fill=FG, font=font)
+        cx += font.getlength(".")
+        draw.text((cx, y), right, fill=KEY, font=font)
+        cx += font.getlength(right)
     else:
-        parts += [(label, KEY), (":", KEY)]
-    parts += [(dots_to(label), CC), (value, VAL)]
-    return parts
+        draw.text((cx, y), label, fill=KEY, font=font)
+        cx += font.getlength(label)
+
+    draw.text((cx, y), ":", fill=KEY, font=font)
+    cx += font.getlength(":")
+
+    dot_w = font.getlength(".")
+    gap = font.getlength(" ")
+    cx += gap
+    while cx + dot_w + gap <= value_x:
+        draw.text((cx, y), ".", fill=CC, font=font)
+        cx += dot_w
+
+    draw.text((value_x, y), value, fill=VAL, font=font)
 
 
-def header_line(title: str, total_chars: int = 58) -> list[tuple[str, tuple[int, int, int]]]:
-    # "- Contact ———————————"
-    dash = "—" * max(4, total_chars - len(title) - 3)
+def header_line(title: str) -> list[tuple[str, tuple[int, int, int]]]:
+    dash = "—" * 40
     return [(title, FG), (f" {dash}-—-", CC)]
 
 
 def build_card() -> Path:
     stats = read_stats_from_svg()
     font = load_font(15)
+    cw = float(font.getbbox("M")[2] - font.getbbox("M")[0])
 
     portrait = prepare_portrait(Image.open(PORTRAIT))
     max_h = H - PAD * 2
     ratio = max_h / portrait.height
-    pw = int(portrait.width * ratio)
-    ph = max_h
+    pw, ph = int(portrait.width * ratio), max_h
     if pw > PORTRAIT_MAX_W:
         pw = PORTRAIT_MAX_W
         ratio = pw / portrait.width
         ph = int(portrait.height * ratio)
     portrait = portrait.resize((pw, ph), Image.Resampling.LANCZOS)
 
-    cw = char_w(font)
-    panel_px = int(PANEL_CHARS * cw) + 8
+    panel_px = int(PANEL_CHARS * cw) + 16
     width = PAD + pw + GAP + panel_px + PAD
-
     card = Image.new("RGBA", (width, H), (*BG, 255))
     card.alpha_composite(portrait, (PAD, (H - ph) // 2))
     draw = ImageDraw.Draw(card)
 
     x = PAD + pw + GAP
+    value_x = int(x + VALUE_COL * cw)
     y = 30
     lh = 20
 
-    # Exact Andrew structure, Hamza content, justified VALUE_COL
-    rows: list[list[tuple[str, tuple[int, int, int]]] | None] = [
+    draw_parts(
+        draw,
+        x,
+        y,
         [("hamza@bjibji", VAL), (" -———————————————————————————————————————————-—-", CC)],
-        row_kv("OS", "Windows 11, Linux (WSL)"),
-        row_kv("Uptime", stats["age"]),
-        row_kv("Host", "ENSA Tetouan — Big Data & AI"),
-        row_kv("Kernel", "AI & Data Engineer"),
-        row_kv("IDE", "Cursor, VS Code"),
-        None,  # blank
-        row_kv("Languages.Programming", "Python, JS, TypeScript, C#, SQL"),
-        row_kv("Languages.Computer", "HTML, CSS, JSON, YAML, Docker"),
-        row_kv("Languages.Real", "Arabic, French, English"),
-        None,
-        row_kv("Interests.Software", "Pipelines, MLOps, Full-Stack"),
-        row_kv("Interests.Domains", "Cybersecurity, Smart Energy"),
-        None,
-        header_line("- Contact"),
-        row_kv("Email", "hamzabjibji@gmail.com"),
-        row_kv("GitHub", "Bjibjihamza"),
-        row_kv("LinkedIn", "hamzabjibji"),
-        row_kv("Phone", "+212 636 376 992"),
-        None,
-        header_line("- GitHub Stats"),
-        # Stats: keep Andrew's multi-column feel but still readable
-        [
-            (". ", CC),
-            ("Repos", KEY),
-            (":", KEY),
-            (" .... ", CC),
-            (stats["repos"], VAL),
-            (" {", FG),
-            ("Contributed", KEY),
-            (": ", FG),
-            (stats["contrib"], VAL),
-            ("} | ", FG),
-            ("Stars", KEY),
-            (":", KEY),
-            (" ........... ", CC),
-            (stats["stars"], VAL),
-        ],
-        [
-            (". ", CC),
-            ("Commits", KEY),
-            (":", KEY),
-            (" ................. ", CC),
-            (stats["commits"], VAL),
-            (" | ", FG),
-            ("Followers", KEY),
-            (":", KEY),
-            (" ....... ", CC),
-            (stats["followers"], VAL),
-        ],
-        [
-            (". ", CC),
-            ("Lines of Code on GitHub", KEY),
-            (":", KEY),
-            (". ", CC),
-            (stats["loc"], VAL),
-            (" ( ", FG),
-            (stats["loc_add"], ADD),
-            ("++", ADD),
-            (", ", FG),
-            (stats["loc_del"], DEL),
-            ("--", DEL),
-            (" )", FG),
-        ],
-    ]
+        font,
+    )
+    y += lh
 
-    for row in rows:
-        if row is None:
-            y += lh
-            continue
-        draw_parts(draw, x, y, row, font)
+    for label, value in [
+        ("OS", "Windows 11, Linux (WSL)"),
+        ("Uptime", stats["age"]),
+        ("Host", "ENSA Tetouan — Big Data & AI"),
+        ("Kernel", "AI & Data Engineer"),
+        ("IDE", "Cursor, VS Code"),
+    ]:
+        draw_kv_row(draw, x, y, label, value, font, value_x)
         y += lh
 
+    y += lh
+    for label, value in [
+        ("Languages.Programming", "Python, JS, TypeScript, C#, SQL"),
+        ("Languages.Computer", "HTML, CSS, JSON, YAML, Docker"),
+        ("Languages.Real", "Arabic, French, English"),
+    ]:
+        draw_kv_row(draw, x, y, label, value, font, value_x)
+        y += lh
+
+    y += lh
+    for label, value in [
+        ("Interests.Software", "Pipelines, MLOps, Full-Stack"),
+        ("Interests.Domains", "Cybersecurity, Smart Energy"),
+    ]:
+        draw_kv_row(draw, x, y, label, value, font, value_x)
+        y += lh
+
+    y += lh
+    draw_parts(draw, x, y, header_line("- Contact"), font)
+    y += lh
+    for label, value in [
+        ("Email", "hamzabjibji@gmail.com"),
+        ("GitHub", "Bjibjihamza"),
+        ("LinkedIn", "hamzabjibji"),
+        ("Phone", "+212 636 376 992"),
+    ]:
+        draw_kv_row(draw, x, y, label, value, font, value_x)
+        y += lh
+
+    y += lh
+    draw_parts(draw, x, y, header_line("- GitHub Stats"), font)
+    y += lh
+    draw_parts(
+        draw,
+        x,
+        y,
+        [
+            (". ", CC), ("Repos", KEY), (":", KEY), (" .... ", CC), (stats["repos"], VAL),
+            (" {", FG), ("Contributed", KEY), (": ", FG), (stats["contrib"], VAL),
+            ("} | ", FG), ("Stars", KEY), (":", KEY), (" ........... ", CC), (stats["stars"], VAL),
+        ],
+        font,
+    )
+    y += lh
+    draw_parts(
+        draw,
+        x,
+        y,
+        [
+            (". ", CC), ("Commits", KEY), (":", KEY), (" ................. ", CC), (stats["commits"], VAL),
+            (" | ", FG), ("Followers", KEY), (":", KEY), (" ....... ", CC), (stats["followers"], VAL),
+        ],
+        font,
+    )
+    y += lh
+    draw_parts(
+        draw,
+        x,
+        y,
+        [
+            (". ", CC), ("Lines of Code on GitHub", KEY), (":", KEY), (". ", CC), (stats["loc"], VAL),
+            (" ( ", FG), (stats["loc_add"], ADD), ("++", ADD), (", ", FG),
+            (stats["loc_del"], DEL), ("--", DEL), (" )", FG),
+        ],
+        font,
+    )
+
     card.convert("RGB").save(OUT, optimize=True)
-    print(f"Wrote {OUT} ({width}x{H})")
+    print(f"Wrote {OUT} ({width}x{H}) value_x={value_x}")
     return OUT
 
 
