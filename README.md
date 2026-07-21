@@ -14,15 +14,10 @@
 
 ---
 
-## Expertise
+## What I build
 
 <div align="center">
-
-| Data Engineering | AI / Machine Learning | Full-Stack |
-|:---:|:---:|:---:|
-| <img src="https://skillicons.dev/icons?i=kafka,python,docker,linux" /> | <img src="https://skillicons.dev/icons?i=tensorflow,python,flask,anaconda" /> | <img src="https://skillicons.dev/icons?i=react,nodejs,ts,postgres" /> |
-| Kafka · Spark · Iceberg · Airflow · Medallion | Neural nets · MLOps · Forecasting · CVSS | React · Node · Postgres · Docker · CI/CD |
-
+  <img src="./assets/what-i-build.svg" alt="What I build — Data Engineering, AI &amp; ML, Full-Stack" width="980" />
 </div>
 
 ---

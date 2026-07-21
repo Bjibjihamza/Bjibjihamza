@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="520" viewBox="0 0 980 520" role="img" aria-label="What I build">
+  <defs>
+    <linearGradient id="iconBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#312e81"/>
+      <stop offset="100%" stop-color="#1e1b4b"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <!-- Card 01 -->
+  <g filter="url(#soft)">
+    <rect x="0" y="20" width="308" height="480" rx="16" fill="#111113" stroke="#27272a" stroke-width="1.5"/>
+  </g>
+  <text x="268" y="78" text-anchor="end" font-family="Georgia, 'Times New Roman', serif" font-size="42" font-weight="700" fill="#27272a">01</text>
+  <rect x="28" y="44" width="44" height="44" rx="10" fill="url(#iconBg)" stroke="#4f46e5" stroke-width="1"/>
+  <!-- database icon -->
+  <ellipse cx="50" cy="56" rx="10" ry="4" fill="none" stroke="#a5b4fc" stroke-width="1.6"/>
+  <path d="M40 56 v12 c0 2.2 4.5 4 10 4 s10-1.8 10-4 V56" fill="none" stroke="#a5b4fc" stroke-width="1.6"/>
+  <path d="M40 64 c0 2.2 4.5 4 10 4 s10-1.8 10-4" fill="none" stroke="#a5b4fc" stroke-width="1.6"/>
+  <text x="28" y="128" font-family="Georgia, 'Times New Roman', serif" font-size="26" font-weight="700" fill="#fafafa">Data Engineering</text>
+  <text x="28" y="156" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" letter-spacing="2.2" fill="#818cf8">DATA INTELLIGENCE</text>
+  <text x="28" y="186" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#a1a1aa">I turn raw data into valuable insights</text>
+  <text x="28" y="206" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#a1a1aa">through robust pipelines and advanced</text>
+  <text x="28" y="226" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#a1a1aa">analytics.</text>
+  <line x1="28" y1="250" x2="280" y2="250" stroke="#27272a" stroke-width="1"/>
+  <text x="28" y="278" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10" font-weight="700" letter-spacing="2.5" fill="#71717a">TECHNOLOGIES</text>
+  <!-- pills card 1 -->
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11" fill="#d4d4d8">
+    <rect x="28" y="292" width="168" height="26" rx="13" fill="#18181b" stroke="#3f3f46"/>
+    <text x="112" y="309" text-anchor="middle">High-performance ETL</text>
+    <rect x="204" y="292" width="76" height="26" rx="13" fill="#18181b" stroke="#3f3f46"/>
+    <text x="242" y="309" text-anchor="middle">Airflow</text>
+
+    <rect x="28" y="326" width="150" height="26" rx="13" fill="#18181b" stroke="#3f3f46"/>
+    <text x="103" y="343" text-anchor="middle">Data warehouse design</text>
+    <rect x="186" y="326" width="94" height="26" rx="13" fill="#18181b" stroke="#3f3f46"/>
+    <text x="233" y="343" text-anchor="middle">Kafka / Spark</text>
+
+    <rect x="28" y="360" width="120" height="26" rx="13" fill="#18181b" stroke="#3f3f46"/>
+    <text x="88" y="377" text-anchor="middle">Real-time analytics</text>
+    <rect x="156" y="360" width="124" height="26" rx="13" fill="#18181b" stroke="#3f3f46"/>
+    <text x="218" y="377" text-anchor="middle">Iceberg / Medallion</text>
+
+    <rect x="28" y="394" width="118" height="26" rx="13" fill="#18181b" stroke="#3f3f46"/>
+    <text x="87" y="411" text-anchor="middle">Data visualization</text>
+    <rect x="154" y="394" width="126" height="26" rx="13" fill="#18181b" stroke="#3f3f46"/>
+    <text x="217" y="411" text-anchor="middle">Cloud data solutions</text>
+  </g>
+
+  <!-- Card 02 -->
+  <g filter="url(#soft)">
+    <rect x="336" y="20" width="308" height="480" rx="16" fill="#111113" stroke="#27272a" stroke-width="1.5"/>
+  </g>
+  <text x="604" y="78" text-anchor="end" font-family="Georgia, 'Times New Roman', serif" font-size="42" font-weight="700" fill="#27272a">02</text>
+  <rect x="364" y="44" width="44" height="44" rx="10" fill="url(#iconBg)" stroke="#4f46e5" stroke-width="1"/>
+  <!-- brain-ish icon -->
+  <path d="M372 66 c0-8 6-14 14-14 s10 4 12 8 c2-4 6-7 12-7 s12 6 12 14 c0 10-6 16-14 18 h-22 c-8-2-14-8-14-19z" fill="none" stroke="#a5b4fc" stroke-width="1.6"/>
+  <text x="364" y="128" font-family="Georgia, 'Times New Roman', serif" font-size="24" font-weight="700" fill="#fafafa">AI &amp; Machine Learning</text>
+  <text x="364" y="156" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" letter-spacing="2.2" fill="#818cf8">ARTIFICIAL INTELLIGENCE</text>
+  <text x="364" y="186" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#a1a1aa">I build intelligent systems that learn</text>
+  <text x="364" y="206" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#a1a1aa">and adapt to solve complex problems.</text>
+  <line x1="364" y1="250" x2="616" y2="250" stroke="#27272a" stroke-width="1"/>
+  <text x="364" y="278" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10" font-weight="700" letter-spacing="2.5" fill="#71717a">TECHNOLOGIES</text>
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11" fill="#d4d4d8">
+    <rect x="364" y="292" width="148" height="26" rx="13" fill="#18181b" stroke="#3f3f46"/>
+    <text x="438" y="309" text-anchor="middle">Machine learning models</text>
+    <rect x="520" y="292" width="96" height="26" rx="13" fill="#18181b" stroke="#3f3f46"/>
+    <text x="568" y="309" text-anchor="middle">TensorFlow</text>
+
+    <rect x="364" y="326" width="132" height="26" rx="13" fill="#18181b" stroke="#3f3f46"/>
+    <text x="430" y="343" text-anchor="middle">Deep learning</text>
+    <rect x="504" y="326" width="112" height="26" rx="13" fill="#18181b" stroke="#3f3f46"/>
+    <text x="560" y="343" text-anchor="middle">scikit-learn</text>
+
+    <rect x="364" y="360" width="128" height="26" rx="13" fill="#18181b" stroke="#3f3f46"/>
+    <text x="428" y="377" text-anchor="middle">Predictive analytics</text>
+    <rect x="500" y="360" width="116" height="26" rx="13" fill="#18181b" stroke="#3f3f46"/>
+    <text x="558" y="377" text-anchor="middle">MLOps retrain</text>
+
+    <rect x="364" y="394" width="118" height="26" rx="13" fill="#18181b" stroke="#3f3f46"/>
+    <text x="423" y="411" text-anchor="middle">AI integration</text>
+    <rect x="490" y="394" width="126" height="26" rx="13" fill="#18181b" stroke="#3f3f46"/>
+    <text x="553" y="411" text-anchor="middle">Forecasting systems</text>
+  </g>
+
+  <!-- Card 03 -->
+  <g filter="url(#soft)">
+    <rect x="672" y="20" width="308" height="480" rx="16" fill="#111113" stroke="#27272a" stroke-width="1.5"/>
+  </g>
+  <text x="940" y="78" text-anchor="end" font-family="Georgia, 'Times New Roman', serif" font-size="42" font-weight="700" fill="#27272a">03</text>
+  <rect x="700" y="44" width="44" height="44" rx="10" fill="url(#iconBg)" stroke="#4f46e5" stroke-width="1"/>
+  <!-- code brackets -->
+  <text x="722" y="74" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="16" font-weight="700" fill="#a5b4fc">&lt;/&gt;</text>
+  <text x="700" y="128" font-family="Georgia, 'Times New Roman', serif" font-size="22" font-weight="700" fill="#fafafa">Full-Stack Development</text>
+  <text x="700" y="156" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" letter-spacing="2.2" fill="#818cf8">END-TO-END SOLUTIONS</text>
+  <text x="700" y="186" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#a1a1aa">I build modern web applications from</text>
+  <text x="700" y="206" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#a1a1aa">design to deployment.</text>
+  <line x1="700" y1="250" x2="952" y2="250" stroke="#27272a" stroke-width="1"/>
+  <text x="700" y="278" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10" font-weight="700" letter-spacing="2.5" fill="#71717a">TECHNOLOGIES</text>
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11" fill="#d4d4d8">
+    <rect x="700" y="292" width="148" height="26" rx="13" fill="#18181b" stroke="#3f3f46"/>
+    <text x="774" y="309" text-anchor="middle">React &amp; Vite apps</text>
+    <rect x="856" y="292" width="96" height="26" rx="13" fill="#18181b" stroke="#3f3f46"/>
+    <text x="904" y="309" text-anchor="middle">Node.js APIs</text>
+
+    <rect x="700" y="326" width="132" height="26" rx="13" fill="#18181b" stroke="#3f3f46"/>
+    <text x="766" y="343" text-anchor="middle">TypeScript</text>
+    <rect x="840" y="326" width="112" height="26" rx="13" fill="#18181b" stroke="#3f3f46"/>
+    <text x="896" y="343" text-anchor="middle">Tailwind CSS</text>
+
+    <rect x="700" y="360" width="128" height="26" rx="13" fill="#18181b" stroke="#3f3f46"/>
+    <text x="764" y="377" text-anchor="middle">Responsive design</text>
+    <rect x="836" y="360" width="116" height="26" rx="13" fill="#18181b" stroke="#3f3f46"/>
+    <text x="894" y="377" text-anchor="middle">Postgres / JWT</text>
+
+    <rect x="700" y="394" width="132" height="26" rx="13" fill="#18181b" stroke="#3f3f46"/>
+    <text x="766" y="411" text-anchor="middle">Performance tuning</text>
+    <rect x="840" y="394" width="112" height="26" rx="13" fill="#18181b" stroke="#3f3f46"/>
+    <text x="896" y="411" text-anchor="middle">Docker / CI/CD</text>
+  </g>
+</svg>
