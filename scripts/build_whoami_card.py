@@ -1,4 +1,4 @@
-"""Compose one seamless whoami card: ascii-me-3.png + stats panel, same background."""
+"""Compose one seamless whoami card: portrait + stats, identical background."""
 from __future__ import annotations
 
 from pathlib import Path
@@ -11,7 +11,7 @@ ASSETS = ROOT / "assets"
 PORTRAIT = ASSETS / "ascii-magic-2.png"
 OUT = ASSETS / "whoami-card.png"
 
-BG = (22, 27, 34)  # #161b22
+BG = (22, 27, 34)  # #161b22 — GitHub dark / SVG panel
 FG = (201, 209, 217)
 KEY = (255, 166, 87)
 VAL = (165, 214, 255)
@@ -19,29 +19,14 @@ CC = (97, 110, 127)
 ADD = (63, 185, 80)
 DEL = (248, 81, 73)
 
-H = 530
-PAD = 16
-PORTRAIT_W = 420
+H = 560
+PAD = 20
+PORTRAIT_MAX_W = 380
 PANEL_W = 640
-GAP = 12  # same BG color → no visible split
+GAP = 28
 
 
-def match_bg(img: Image.Image, bg: tuple[int, int, int] = BG, threshold: int = 22) -> Image.Image:
-    """Map near-black portrait pixels to card background so there is no seam."""
-    rgba = img.convert("RGBA")
-    pixels = list(rgba.getdata())
-    br, bg_, bb = bg
-    out = []
-    for r, g, b, a in pixels:
-        if a < 10 or (r <= threshold and g <= threshold and b <= threshold):
-            out.append((br, bg_, bb, 255))
-        else:
-            out.append((r, g, b, a))
-    rgba.putdata(out)
-    return rgba
-
-
-def load_font(size: int = 15) -> ImageFont.FreeTypeFont | ImageFont.ImageFont:
+def load_font(size: int = 15) -> ImageFont.ImageFont:
     candidates = [
         Path(r"C:\Windows\Fonts\consola.ttf"),
         Path(r"C:\Windows\Fonts\CascadiaMono.ttf"),
@@ -63,30 +48,53 @@ def svg_text(root, eid: str, default: str = "") -> str:
 
 def read_stats_from_svg() -> dict[str, str]:
     path = ROOT / "dark_mode.svg"
-    if not path.exists():
-        return {
-            "age": "22 years, 9 months, 23 days",
-            "repos": "23",
-            "contrib": "24",
-            "stars": "9",
-            "commits": "20",
-            "followers": "12",
-            "loc": "68,915",
-            "loc_add": "92,404",
-            "loc_del": "23,489",
-        }
-    root = etree.parse(str(path)).getroot()
-    return {
-        "age": svg_text(root, "age_data", "22 years, 9 months, 23 days"),
-        "repos": svg_text(root, "repo_data", "23"),
-        "contrib": svg_text(root, "contrib_data", "24"),
-        "stars": svg_text(root, "star_data", "9"),
-        "commits": svg_text(root, "commit_data", "20"),
-        "followers": svg_text(root, "follower_data", "12"),
-        "loc": svg_text(root, "loc_data", "68,915"),
-        "loc_add": svg_text(root, "loc_add", "92,404"),
-        "loc_del": svg_text(root, "loc_del", "23,489"),
+    defaults = {
+        "age": "22 years, 9 months, 23 days",
+        "repos": "23",
+        "contrib": "24",
+        "stars": "9",
+        "commits": "20",
+        "followers": "12",
+        "loc": "68,915",
+        "loc_add": "92,404",
+        "loc_del": "23,489",
     }
+    if not path.exists():
+        return defaults
+    root = etree.parse(str(path)).getroot()
+    return {k: svg_text(root, {
+        "age": "age_data",
+        "repos": "repo_data",
+        "contrib": "contrib_data",
+        "stars": "star_data",
+        "commits": "commit_data",
+        "followers": "follower_data",
+        "loc": "loc_data",
+        "loc_add": "loc_add",
+        "loc_del": "loc_del",
+    }[k], v) for k, v in defaults.items()}
+
+
+def prepare_portrait(img: Image.Image, threshold: int = 16) -> Image.Image:
+    """
+    Keep only the colored ASCII dots.
+    Transparent + near-black pixels become fully transparent so the card BG shows through.
+    """
+    rgba = img.convert("RGBA")
+    pixels = list(rgba.getdata())
+    out = []
+    for r, g, b, a in pixels:
+        if a < 40 or (r <= threshold and g <= threshold and b <= threshold):
+            out.append((0, 0, 0, 0))
+        else:
+            out.append((r, g, b, 255))
+    rgba.putdata(out)
+
+    # Crop to visible content so we don't reserve a black rectangle
+    bbox = rgba.getbbox()
+    if bbox:
+        rgba = rgba.crop(bbox)
+    return rgba
 
 
 def draw_colored_line(
@@ -103,48 +111,36 @@ def draw_colored_line(
         cx = bbox[2]
 
 
-def match_bg(img: Image.Image, bg: tuple[int, int, int] = BG, threshold: int = 18) -> Image.Image:
-    """Map near-black portrait pixels to card background so there is no seam."""
-    rgba = img.convert("RGBA")
-    pixels = rgba.load()
-    w, h = rgba.size
-    br, bg_, bb = bg
-    for y in range(h):
-        for x in range(w):
-            r, g, b, a = pixels[x, y]
-            if a < 10 or (r <= threshold and g <= threshold and b <= threshold):
-                pixels[x, y] = (br, bg_, bb, 255)
-    return rgba
-
-
 def build_card() -> Path:
     stats = read_stats_from_svg()
     font = load_font(15)
     font_sm = load_font(14)
 
-    portrait = match_bg(Image.open(PORTRAIT))
-    # Fit portrait into left column, cover height
-    target_h = H - PAD * 2
-    ratio = target_h / portrait.height
+    portrait = prepare_portrait(Image.open(PORTRAIT))
+
+    # Scale portrait to fit card height (with padding)
+    max_h = H - PAD * 2
+    ratio = max_h / portrait.height
     pw = int(portrait.width * ratio)
-    if pw > PORTRAIT_W:
-        pw = PORTRAIT_W
+    ph = max_h
+    if pw > PORTRAIT_MAX_W:
+        pw = PORTRAIT_MAX_W
         ratio = pw / portrait.width
-        target_h = int(portrait.height * ratio)
-    portrait = portrait.resize((pw, target_h), Image.Resampling.LANCZOS)
+        ph = int(portrait.height * ratio)
+    portrait = portrait.resize((pw, ph), Image.Resampling.LANCZOS)
 
     width = PAD + pw + GAP + PANEL_W + PAD
-    card = Image.new("RGB", (width, H), BG)
+    # One flat background — no boxes, no borders, no dividers
+    card = Image.new("RGBA", (width, H), (*BG, 255))
 
-    # Portrait flush on left, vertically centered — same BG, no divider
     px = PAD
-    py = (H - portrait.height) // 2
-    card.paste(portrait.convert("RGB"), (px, py))
-    draw = ImageDraw.Draw(card)
+    py = (H - ph) // 2
+    card.alpha_composite(portrait, (px, py))
 
+    draw = ImageDraw.Draw(card)
     x = PAD + pw + GAP
-    y0 = 28
-    lh = 22
+    y = 32
+    lh = 21
 
     lines: list[list[tuple[str, tuple[int, int, int]]]] = [
         [("hamza@bjibji", VAL), (" --------------------------------", CC)],
@@ -167,53 +163,22 @@ def build_card() -> Path:
         [(". ", CC), ("Phone", KEY), (":", KEY), (" ..................................... ", CC), ("+212 636 376 992", VAL)],
         [("- GitHub Stats", FG), (" ---------------------------", CC)],
         [
-            (". ", CC),
-            ("Repos", KEY),
-            (":", KEY),
-            (" .... ", CC),
-            (stats["repos"], VAL),
-            (" {", FG),
-            ("Contributed", KEY),
-            (": ", FG),
-            (stats["contrib"], VAL),
-            ("} | ", FG),
-            ("Stars", KEY),
-            (":", KEY),
-            (" ........... ", CC),
-            (stats["stars"], VAL),
+            (". ", CC), ("Repos", KEY), (":", KEY), (" .... ", CC), (stats["repos"], VAL),
+            (" {", FG), ("Contributed", KEY), (": ", FG), (stats["contrib"], VAL),
+            ("} | ", FG), ("Stars", KEY), (":", KEY), (" ........... ", CC), (stats["stars"], VAL),
         ],
         [
-            (". ", CC),
-            ("Commits", KEY),
-            (":", KEY),
-            (" ................. ", CC),
-            (stats["commits"], VAL),
-            (" | ", FG),
-            ("Followers", KEY),
-            (":", KEY),
-            (" ....... ", CC),
-            (stats["followers"], VAL),
+            (". ", CC), ("Commits", KEY), (":", KEY), (" ................. ", CC), (stats["commits"], VAL),
+            (" | ", FG), ("Followers", KEY), (":", KEY), (" ....... ", CC), (stats["followers"], VAL),
         ],
         [
-            (". ", CC),
-            ("Lines of Code on GitHub", KEY),
-            (":", KEY),
-            (". ", CC),
-            (stats["loc"], VAL),
-            (" ( ", FG),
-            (stats["loc_add"], ADD),
-            ("++", ADD),
-            (", ", FG),
-            (stats["loc_del"], DEL),
-            ("--", DEL),
-            (" )", FG),
+            (". ", CC), ("Lines of Code on GitHub", KEY), (":", KEY), (". ", CC), (stats["loc"], VAL),
+            (" ( ", FG), (stats["loc_add"], ADD), ("++", ADD), (", ", FG),
+            (stats["loc_del"], DEL), ("--", DEL), (" )", FG),
         ],
     ]
 
-    # Spacing map similar to SVG y positions
-    y = y0
     for i, parts in enumerate(lines):
-        # Extra space before Contact / Stats headers (indices 13, 18)
         if i == 13:
             y += 16
         if i == 18:
@@ -222,10 +187,8 @@ def build_card() -> Path:
         draw_colored_line(draw, x, y, parts, f)
         y += lh
 
-    # Soft rounded look: optional border matching card
-    # (no internal divider)
-    card.save(OUT, optimize=True)
-    print(f"Wrote {OUT} ({card.size[0]}x{card.size[1]})")
+    card.convert("RGB").save(OUT, optimize=True)
+    print(f"Wrote {OUT} ({width}x{H})")
     return OUT
 
 
