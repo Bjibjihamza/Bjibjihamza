@@ -1,4 +1,4 @@
-"""Compose one seamless whoami card: portrait + Andrew-style pixel-aligned panel."""
+"""Compose whoami card: portrait + Andrew-style RIGHT-aligned panel (cube edge)."""
 from __future__ import annotations
 
 from pathlib import Path
@@ -22,9 +22,9 @@ DEL = (248, 81, 73)
 H = 530
 PAD = 20
 PORTRAIT_MAX_W = 360
-PANEL_CHARS = 78
 GAP = 28
-VALUE_COL = 34  # char column → converted to pixels for perfect alignment
+# Fixed content width in characters → every line ends on the same vertical edge
+PANEL_WIDTH_CHARS = 62
 
 
 def load_font(size: int = 15) -> ImageFont.ImageFont:
@@ -89,15 +89,28 @@ def prepare_portrait(img: Image.Image, threshold: int = 16) -> Image.Image:
     return rgba.crop(bbox) if bbox else rgba
 
 
-def draw_parts(draw, x, y, parts, font) -> None:
-    cx = x
-    for text, color in parts:
-        draw.text((cx, y), text, fill=color, font=font)
-        cx += font.getlength(text)
+def draw_rule(draw, x: int, y: int, prefix: str, font, right_x: int, prefix_color=VAL) -> None:
+    """Draw 'prefix ———…' filling exactly to right_x (cube right edge)."""
+    draw.text((x, y), prefix, fill=prefix_color, font=font)
+    cx = x + font.getlength(prefix)
+    dash = "—"
+    dash_w = font.getlength(dash)
+    # trailing "-—-" like Andrew
+    tail = "-—-"
+    tail_w = font.getlength(tail)
+    while cx + dash_w + tail_w <= right_x:
+        draw.text((cx, y), dash, fill=CC, font=font)
+        cx += dash_w
+    draw.text((right_x - tail_w, y), tail, fill=CC, font=font)
 
 
-def draw_kv_row(draw, x, y, label, value, font, value_x) -> None:
-    """Andrew-style row with value locked to a fixed pixel X."""
+def draw_kv_row(draw, x: int, y: int, label: str, value: str, font, right_x: int) -> None:
+    """
+    Andrew cube style:
+      . Label: .............. value
+    Values are RIGHT-aligned to right_x so every line ends on the same edge.
+    """
+    # Left: ". Label:"
     draw.text((x, y), ". ", fill=CC, font=font)
     cx = x + font.getlength(". ")
 
@@ -116,6 +129,11 @@ def draw_kv_row(draw, x, y, label, value, font, value_x) -> None:
     draw.text((cx, y), ":", fill=KEY, font=font)
     cx += font.getlength(":")
 
+    # Right-aligned value
+    val_w = font.getlength(value)
+    value_x = right_x - val_w
+
+    # Dots between label and value
     dot_w = font.getlength(".")
     gap = font.getlength(" ")
     cx += gap
@@ -126,9 +144,22 @@ def draw_kv_row(draw, x, y, label, value, font, value_x) -> None:
     draw.text((value_x, y), value, fill=VAL, font=font)
 
 
-def header_line(title: str) -> list[tuple[str, tuple[int, int, int]]]:
-    dash = "—" * 40
-    return [(title, FG), (f" {dash}-—-", CC)]
+def draw_stats_line(draw, x: int, y: int, parts: list[tuple[str, tuple]], font, right_x: int) -> None:
+    """Draw a stats line, then pad trailing dots/spaces conceptually by ensuring end == right_x.
+    For multi-segment stats we left-draw then fill remaining with nothing (line naturally ends early)
+    OR we right-pad with spaces visually by pushing last segment — Andrew's LOC line defines the edge.
+    """
+    cx = x
+    for text, color in parts:
+        draw.text((cx, y), text, fill=color, font=font)
+        cx += font.getlength(text)
+    # If short, fill remaining with dim dots to the cube edge (keeps rectangular block)
+    if cx < right_x - font.getlength(" "):
+        dot_w = font.getlength(".")
+        cx += font.getlength(" ")
+        while cx + dot_w <= right_x:
+            draw.text((cx, y), ".", fill=CC, font=font)
+            cx += dot_w
 
 
 def build_card() -> Path:
@@ -146,24 +177,19 @@ def build_card() -> Path:
         ph = int(portrait.height * ratio)
     portrait = portrait.resize((pw, ph), Image.Resampling.LANCZOS)
 
-    panel_px = int(PANEL_CHARS * cw) + 16
-    width = PAD + pw + GAP + panel_px + PAD
+    panel_w = int(PANEL_WIDTH_CHARS * cw)
+    width = PAD + pw + GAP + panel_w + PAD
     card = Image.new("RGBA", (width, H), (*BG, 255))
     card.alpha_composite(portrait, (PAD, (H - ph) // 2))
     draw = ImageDraw.Draw(card)
 
     x = PAD + pw + GAP
-    value_x = int(x + VALUE_COL * cw)
+    right_x = x + panel_w  # ← every line ends here (the cube edge)
     y = 30
     lh = 20
 
-    draw_parts(
-        draw,
-        x,
-        y,
-        [("hamza@bjibji", VAL), (" -———————————————————————————————————————————-—-", CC)],
-        font,
-    )
+    # Header rule — full width to right_x
+    draw_rule(draw, x, y, "hamza@bjibji ", font, right_x, prefix_color=VAL)
     y += lh
 
     for label, value in [
@@ -173,7 +199,7 @@ def build_card() -> Path:
         ("Kernel", "AI & Data Engineer"),
         ("IDE", "Cursor, VS Code"),
     ]:
-        draw_kv_row(draw, x, y, label, value, font, value_x)
+        draw_kv_row(draw, x, y, label, value, font, right_x)
         y += lh
 
     y += lh
@@ -182,7 +208,7 @@ def build_card() -> Path:
         ("Languages.Computer", "HTML, CSS, JSON, YAML, Docker"),
         ("Languages.Real", "Arabic, French, English"),
     ]:
-        draw_kv_row(draw, x, y, label, value, font, value_x)
+        draw_kv_row(draw, x, y, label, value, font, right_x)
         y += lh
 
     y += lh
@@ -190,11 +216,11 @@ def build_card() -> Path:
         ("Interests.Software", "Pipelines, MLOps, Full-Stack"),
         ("Interests.Domains", "Cybersecurity, Smart Energy"),
     ]:
-        draw_kv_row(draw, x, y, label, value, font, value_x)
+        draw_kv_row(draw, x, y, label, value, font, right_x)
         y += lh
 
     y += lh
-    draw_parts(draw, x, y, header_line("- Contact"), font)
+    draw_rule(draw, x, y, "- Contact ", font, right_x, prefix_color=FG)
     y += lh
     for label, value in [
         ("Email", "hamzabjibji@gmail.com"),
@@ -202,49 +228,75 @@ def build_card() -> Path:
         ("LinkedIn", "hamzabjibji"),
         ("Phone", "+212 636 376 992"),
     ]:
-        draw_kv_row(draw, x, y, label, value, font, value_x)
+        draw_kv_row(draw, x, y, label, value, font, right_x)
         y += lh
 
     y += lh
-    draw_parts(draw, x, y, header_line("- GitHub Stats"), font)
+    draw_rule(draw, x, y, "- GitHub Stats ", font, right_x, prefix_color=FG)
     y += lh
-    draw_parts(
+
+    # Stats: compose as one string-width line ending at right_x
+    # Line 1: Repos + Stars
+    draw_kv_row(
         draw,
         x,
         y,
-        [
-            (". ", CC), ("Repos", KEY), (":", KEY), (" .... ", CC), (stats["repos"], VAL),
-            (" {", FG), ("Contributed", KEY), (": ", FG), (stats["contrib"], VAL),
-            ("} | ", FG), ("Stars", KEY), (":", KEY), (" ........... ", CC), (stats["stars"], VAL),
-        ],
+        "Repos",
+        f"{stats['repos']} {{Contributed: {stats['contrib']}}} | Stars: {stats['stars']}",
         font,
+        right_x,
     )
     y += lh
-    draw_parts(
+    draw_kv_row(
         draw,
         x,
         y,
-        [
-            (". ", CC), ("Commits", KEY), (":", KEY), (" ................. ", CC), (stats["commits"], VAL),
-            (" | ", FG), ("Followers", KEY), (":", KEY), (" ....... ", CC), (stats["followers"], VAL),
-        ],
+        "Commits",
+        f"{stats['commits']} | Followers: {stats['followers']}",
         font,
+        right_x,
     )
     y += lh
-    draw_parts(
-        draw,
-        x,
-        y,
-        [
-            (". ", CC), ("Lines of Code on GitHub", KEY), (":", KEY), (". ", CC), (stats["loc"], VAL),
-            (" ( ", FG), (stats["loc_add"], ADD), ("++", ADD), (", ", FG),
-            (stats["loc_del"], DEL), ("--", DEL), (" )", FG),
-        ],
-        font,
-    )
+
+    # LOC with colored ++/-- — draw manually, right-aligned block
+    label = "Lines of Code on GitHub"
+    draw.text((x, y), ". ", fill=CC, font=font)
+    cx = x + font.getlength(". ")
+    draw.text((cx, y), label, fill=KEY, font=font)
+    cx += font.getlength(label)
+    draw.text((cx, y), ":", fill=KEY, font=font)
+    cx += font.getlength(":")
+
+    loc_tail = f"{stats['loc']} ( {stats['loc_add']}++, {stats['loc_del']}-- )"
+    # Measure colored segments for right align
+    # We draw: loc VAL, " ( " FG, add ADD, "++" ADD, ", " FG, del DEL, "--" DEL, " )" FG
+    segments = [
+        (stats["loc"], VAL),
+        (" ( ", FG),
+        (stats["loc_add"], ADD),
+        ("++", ADD),
+        (", ", FG),
+        (stats["loc_del"], DEL),
+        ("--", DEL),
+        (" )", FG),
+    ]
+    tail_w = sum(font.getlength(t) for t, _ in segments)
+    value_x = right_x - tail_w
+
+    dot_w = font.getlength(".")
+    gap = font.getlength(" ")
+    cx += gap
+    while cx + dot_w + gap <= value_x:
+        draw.text((cx, y), ".", fill=CC, font=font)
+        cx += dot_w
+
+    cx = value_x
+    for text, color in segments:
+        draw.text((cx, y), text, fill=color, font=font)
+        cx += font.getlength(text)
 
     card.convert("RGB").save(OUT, optimize=True)
-    print(f"Wrote {OUT} ({width}x{H}) value_x={value_x}")
+    print(f"Wrote {OUT} ({width}x{H}) right_x={right_x}")
     return OUT
 
 
