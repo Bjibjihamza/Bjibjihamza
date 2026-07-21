@@ -1,27 +1,15 @@
+
+
 <div align="center">
+  <img src="./assets/whoami-card.png" alt="hamza@bjibji" width="980" />
+</div
 
-```
- _                     _
-| |__   __ _ _ __ ___ | | __ _
-| '_ \ / _` | '_ ` _ \| |/ _` |
-| |_) | (_| | | | | | | | (_| |
-|_.__/ \__,_|_| |_| |_|_|\__,_|
-          b j i b j i
-```
-
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3200&pause=900&color=FFA657&center=true&vCenter=true&width=640&lines=AI+%26+Data+Engineer;Big+Data+%26+Streaming;ML+%26+MLOps;Full-Stack+Builder" alt="Typing SVG" />
+ <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3200&pause=900&color=FFA657&center=true&vCenter=true&width=640&lines=AI+%26+Data+Engineer;Big+Data+%26+Streaming;ML+%26+MLOps;Full-Stack+Builder" alt="Typing SVG" />
 
 <br/>
 
 [![views](https://komarev.com/ghpvc/?username=Bjibjihamza&color=616b7f&style=flat-square&label=views)](https://github.com/Bjibjihamza)
 
-</div>
-
-<br/>
-
-<div align="center">
-  <img src="./assets/whoami-card.png" alt="hamza@bjibji" width="980" />
-</div>
 
 ---
 
