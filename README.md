@@ -1,121 +1,185 @@
-
-
-<div align="center">
-  <img src="./assets/whoami-card.png" alt="hamza@bjibji" width="980" />
-</div
-
- <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3200&pause=900&color=FFA657&center=true&vCenter=true&width=640&lines=AI+%26+Data+Engineer;Big+Data+%26+Streaming;ML+%26+MLOps;Full-Stack+Builder" alt="Typing SVG" />
+﻿<div align="center">
+  <img src="./assets/brand-banner.svg" alt="Hamza Bjibji" width="980" />
+  <br/><br/>
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&duration=3000&pause=800&color=A5D6FF&center=true&vCenter=true&width=700&lines=AI+%26+Data+Engineer;Building+real-time+pipelines;MLOps+%26+Full-Stack" alt="Typing" />
+  <br/>
+  <a href="https://github.com/Bjibjihamza"><img src="https://komarev.com/ghpvc/?username=Bjibjihamza&label=Profile%20views&color=ffa657&style=flat-square" alt="views"/></a>
+</div>
 
 <br/>
 
-[![views](https://komarev.com/ghpvc/?username=Bjibjihamza&color=616b7f&style=flat-square&label=views)](https://github.com/Bjibjihamza)
-
-
----
-
-## `$ ls -la ~/expertise`
-
-```text
-~/expertise/
-├── data-eng/     Kafka · Spark · Iceberg · Airflow · Medallion · MinIO
-├── ai-ml/        TensorFlow · sklearn · MLOps · forecasting · CVSS
-└── full-stack/   React · Node · Postgres · Docker · CI/CD · TypeScript
-```
+<div align="center">
+  <img src="./assets/whoami-card.png" alt="hamza@bjibji whoami card" width="980" />
+</div>
 
 ---
 
-## `$ cat ~/tech-stack.json`
-
-```json
-{
-  "languages": ["JavaScript", "Python", "TypeScript", "C#", "SQL"],
-  "big_data": ["Kafka", "Spark", "Airflow", "Cassandra", "Iceberg", "MinIO"],
-  "frontend": ["React", "Vite", "Tailwind CSS"],
-  "backend": ["Node.js", "Express", "PostgreSQL", "MongoDB", "Oracle"],
-  "cloud_devops": ["Azure", "Huawei Cloud", "Docker", "Nginx"],
-  "ml_ai": ["TensorFlow", "scikit-learn", "Flask"]
-}
-```
-
----
-
-## `$ git log --oneline --all` — Featured Projects
-
-```text
-EDUPATH/                      [active]   Math learning · monorepo
-                             React 19 · Vite · Tailwind · Node · Postgres
-
-Real-Time-Car-Price/          [stable]   Kafka → Spark → ML pricing
-                             Kafka · Spark · Cassandra · TensorFlow · Airflow
-
-threat-intelligence-pipeline/ [stable]   CVE warehouse · 313K+ vulns
-                             Medallion · Telethon · PostgreSQL
-
-renewstation-huawei-cloud/    [stable]   Energy forecast · R² 99.8%
-                             RandomForest · Airflow MLOps · 278K points
-
-smart-estate-recommender/     [stable]   Avito/Mubawab lakehouse
-                             Kafka · Spark Streaming · Iceberg · MinIO
-
-car-rental-bi-platform/       [active]   BI + IoT telemetry · 5 cities
-                             Oracle · Medallion · GPS/fuel twin
-```
-
-[EDUPATH](https://github.com/Bjibjihamza/EDUPATH) ·
-[Car Price](https://github.com/Bjibjihamza/Real-Time-Car-Price-Recommendation-and-Prediction-System-with-Kafka-and-Spark) ·
-[Threat Intel](https://github.com/Bjibjihamza/threat-intelligence-pipeline) ·
-[RenewStation](https://github.com/Bjibjihamza/renewstation-huawei-cloud) ·
-[Smart Estate](https://github.com/Bjibjihamza/smart-estate-recommender-valuator) ·
-[Car Rental BI](https://github.com/Bjibjihamza/car-rental-bi-platform)
-
-> 12 more repos → [github.com/Bjibjihamza?tab=repositories](https://github.com/Bjibjihamza?tab=repositories)
-
----
-
-## `$ tail -f ~/growth.log`
-
-```text
-# growth.log — commits that changed direction
-2024-07  First commit. ABR Watches — e-commerce, vanilla JS
-2025-02  NovaDrive + Code Source Scraper — tooling & frontend
-2025-04  Kafka enters. Real-Time Car Price System launches
-2025-06  First team project — Club-Site (3 devs)
-2025-10  Threat Intel Pipeline + CarRental WPF + Car BI
-2025-11  Lakehouse stack: Iceberg + MinIO + Spark Streaming
-2025-12  RenewStation ships: 99.8% R² on energy prediction
-2026-02  Azure MLOps pipeline for real estate analytics
-2026-04  EDUPATH goes live — React 19 monorepo
-```
-
----
-
-## `$ ping hamza`
-
-```text
-host:     Tétouan, Morocco
-email:    hamzabjibji@gmail.com
-github:   github.com/Bjibjihamza
-linkedin: linkedin.com/in/hamzabjibji
-phone:    +212 636 376 992
-open_to:  Internships · Freelance · Collaborations
-seeking:  Data Engineering · MLOps · Full-Stack
-```
+## Expertise
 
 <div align="center">
 
-[email](mailto:hamzabjibji@gmail.com) ·
-[github](https://github.com/Bjibjihamza) ·
-[linkedin](https://linkedin.com/in/hamzabjibji) ·
-[whatsapp](https://wa.me/212636376992)
+| Data Engineering | AI / Machine Learning | Full-Stack |
+|:---:|:---:|:---:|
+| <img src="https://skillicons.dev/icons?i=kafka,python,docker,linux" /> | <img src="https://skillicons.dev/icons?i=tensorflow,python,flask,anaconda" /> | <img src="https://skillicons.dev/icons?i=react,nodejs,ts,postgres" /> |
+| Kafka ┬╖ Spark ┬╖ Iceberg ┬╖ Airflow ┬╖ Medallion | Neural nets ┬╖ MLOps ┬╖ Forecasting ┬╖ CVSS | React ┬╖ Node ┬╖ Postgres ┬╖ Docker ┬╖ CI/CD |
+
+</div>
+
+---
+
+## Tech Stack
+
+<div align="center">
+
+**Languages**
+
+<img src="https://skillicons.dev/icons?i=js,ts,python,cs,java" />
+
+**Big Data & Streaming**
+
+<img src="https://skillicons.dev/icons?i=kafka,docker,linux,python" />
+&nbsp;
+<img height="48" src="https://cdn.simpleicons.org/apachespark/E25A1C" alt="Spark"/>
+&nbsp;
+<img height="48" src="https://cdn.simpleicons.org/apacheairflow/017CEE" alt="Airflow"/>
+&nbsp;
+<img height="48" src="https://cdn.simpleicons.org/apachecassandra/1287B1" alt="Cassandra"/>
+
+**Frontend**
+
+<img src="https://skillicons.dev/icons?i=react,vite,tailwind,html,css" />
+
+**Backend & Databases**
+
+<img src="https://skillicons.dev/icons?i=nodejs,express,postgres,mongodb,nginx" />
+&nbsp;
+<img height="48" src="https://cdn.simpleicons.org/oracle/F80000" alt="Oracle"/>
+
+**Cloud & DevOps**
+
+<img src="https://skillicons.dev/icons?i=azure,docker,githubactions,linux" />
+&nbsp;
+<img height="48" src="https://cdn.simpleicons.org/huawei/CF0A2C" alt="Huawei Cloud"/>
+
+**ML & AI**
+
+<img src="https://skillicons.dev/icons?i=tensorflow,python,flask,anaconda" />
+&nbsp;
+<img height="48" src="https://cdn.simpleicons.org/scikitlearn/F7931E" alt="scikit-learn"/>
+
+</div>
+
+---
+
+## Featured Projects
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+### [EDUPATH](https://github.com/Bjibjihamza/EDUPATH)
+Math learning platform ΓÇö monorepo ┬╖ **active**
+
+<img src="https://skillicons.dev/icons?i=react,vite,nodejs,postgres,docker&perline=5" />
+
+React 19 ┬╖ Vite ┬╖ Tailwind ┬╖ JWT ┬╖ Cloudflare R2
+
+</td>
+<td width="50%" valign="top">
+
+### [Real-Time Car Price](https://github.com/Bjibjihamza/Real-Time-Car-Price-Recommendation-and-Prediction-System-with-Kafka-and-Spark)
+Kafka ΓåÆ Spark ΓåÆ ML pricing ┬╖ **stable**
+
+<img src="https://skillicons.dev/icons?i=kafka,python,tensorflow,docker&perline=4" />
+
+Cassandra ┬╖ Airflow ┬╖ Collaborative Filtering
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+### [Threat Intelligence Pipeline](https://github.com/Bjibjihamza/threat-intelligence-pipeline)
+CVE warehouse ┬╖ 313K+ vulns ┬╖ **stable**
+
+<img src="https://skillicons.dev/icons?i=python,postgres,docker&perline=3" />
+
+Medallion ┬╖ Telethon ┬╖ Tableau / Metabase ready
+
+</td>
+<td width="50%" valign="top">
+
+### [RenewStation](https://github.com/Bjibjihamza/renewstation-huawei-cloud)
+Energy forecast ┬╖ R┬▓ 99.8% ┬╖ **stable**
+
+<img src="https://skillicons.dev/icons?i=python,sklearn,docker&perline=3" />
+<img height="40" src="https://cdn.simpleicons.org/huawei/CF0A2C" alt="Huawei"/>
+
+RandomForest ┬╖ Airflow MLOps ┬╖ 278K points
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+### [Smart Estate Recommender](https://github.com/Bjibjihamza/smart-estate-recommender-valuator)
+Avito / Mubawab lakehouse ┬╖ **stable**
+
+<img src="https://skillicons.dev/icons?i=kafka,python,docker&perline=3" />
+
+Spark Streaming ┬╖ Iceberg ┬╖ MinIO
+
+</td>
+<td width="50%" valign="top">
+
+### [Car Rental BI](https://github.com/Bjibjihamza/car-rental-bi-platform)
+BI + IoT telemetry ┬╖ 5 cities ┬╖ **active**
+
+<img height="40" src="https://cdn.simpleicons.org/oracle/F80000" alt="Oracle"/>
+&nbsp;
+<img src="https://skillicons.dev/icons?i=python,docker&perline=2" />
+
+Medallion ┬╖ GPS / fuel twin ┬╖ real-time
+
+</td>
+</tr>
+</table>
+
+> 12 more repos ΓåÆ [see them all](https://github.com/Bjibjihamza?tab=repositories)
+
+---
+
+## Timeline
+
+<div align="center">
+  <img src="./assets/timeline.svg" alt="Growth timeline" width="980" />
+</div>
+---
+
+## Connect
+
+<div align="center">
+
+<a href="mailto:hamzabjibji@gmail.com"><img src="https://img.shields.io/badge/Gmail-161b22?style=for-the-badge&logo=gmail&logoColor=ffa657" alt="Email"/></a>
+<a href="https://github.com/Bjibjihamza"><img src="https://img.shields.io/badge/GitHub-161b22?style=for-the-badge&logo=github&logoColor=a5d6ff" alt="GitHub"/></a>
+<a href="https://linkedin.com/in/hamzabjibji"><img src="https://img.shields.io/badge/LinkedIn-161b22?style=for-the-badge&logo=linkedin&logoColor=a5d6ff" alt="LinkedIn"/></a>
+<a href="https://wa.me/212636376992"><img src="https://img.shields.io/badge/WhatsApp-161b22?style=for-the-badge&logo=whatsapp&logoColor=63b985" alt="WhatsApp"/></a>
+
+<br/><br/>
+
+**T├⌐touan, Morocco** ┬╖ Open to Internships ┬╖ Freelance ┬╖ Collaborations  
+Seeking: **Data Engineering ┬╖ MLOps ┬╖ Full-Stack**
 
 <br/>
 
-`$ watch contrib`
+<img src="./assets/brand-logo.png" alt="HB logo" width="96" />
 
-![Snake animation](https://raw.githubusercontent.com/Bjibjihamza/Bjibjihamza/output/github-contribution-grid-snake-dark.svg)
+<br/><br/>
+
+![Contribution snake](https://raw.githubusercontent.com/Bjibjihamza/Bjibjihamza/output/github-contribution-grid-snake-dark.svg)
 
 <br/>
 
-<sub>built with too many Kafka consumers · last sync Jul 2026</sub>
+<sub>pipelines over slides ┬╖ last sync Jul 2026</sub>
 
 </div>
