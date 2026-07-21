@@ -217,7 +217,7 @@ def build_card() -> Path:
     y += lh
     for label, value in [
         ("Interests.Software", "Pipelines, MLOps, Real-time"),
-        ("Interests.Domains", "AI, Big Data, Smart Energy"),
+        ("Interests.Domains", "AI, Big Data, DEV"),
     ]:
         draw_kv_row(draw, x, y, label, value, font, right_x)
         y += lh
