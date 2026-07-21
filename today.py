@@ -13,7 +13,8 @@ import hashlib
 _TOKEN = os.environ.get('ACCESS_TOKEN', '').strip()
 if not _TOKEN:
     raise SystemExit('ACCESS_TOKEN env var is missing. Add it as a GitHub Actions secret.')
-HEADERS = {'Authorization': f'Bearer {_TOKEN}'}
+# Classic PAT: "token …" | Fine-grained PAT: also accepts "token …"
+HEADERS = {'Authorization': 'token ' + _TOKEN}
 USER_NAME = os.environ.get('USER_NAME', 'Bjibjihamza')
 QUERY_COUNT = {'user_getter': 0, 'follower_getter': 0, 'graph_repos_stars': 0, 'recursive_loc': 0, 'graph_commits': 0, 'loc_query': 0}
 
@@ -49,6 +50,9 @@ def simple_request(func_name, query, variables):
     """
     request = requests.post('https://api.github.com/graphql', json={'query': query, 'variables':variables}, headers=HEADERS)
     if request.status_code == 200:
+        payload = request.json()
+        if 'errors' in payload:
+            raise Exception(func_name, 'GraphQL errors:', payload['errors'], QUERY_COUNT)
         return request
     raise Exception(func_name, ' has failed with a', request.status_code, request.text, QUERY_COUNT)
 
@@ -447,38 +451,46 @@ if __name__ == '__main__':
     Bjibji Hamza (Bjibjihamza)
     """
     print('Calculation times:')
-    # define global variable for owner ID and calculate user's creation date
-    # e.g {'id': 'MDQ6VXNlcjU3MzMxMTM0'} and 2019-11-03T21:15:07Z for username 'Andrew6rant'
-    user_data, user_time = perf_counter(user_getter, USER_NAME)
-    OWNER_ID, acc_date = user_data
-    formatter('account data', user_time)
-    age_data, age_time = perf_counter(daily_readme, datetime.datetime(2003, 9, 28))
-    formatter('age calculation', age_time)
-    total_loc, loc_time = perf_counter(loc_query, ['OWNER', 'COLLABORATOR', 'ORGANIZATION_MEMBER'], 7)
-    formatter('LOC (cached)', loc_time) if total_loc[-1] else formatter('LOC (no cache)', loc_time)
-    commit_data, commit_time = perf_counter(commit_counter, 7)
-    star_data, star_time = perf_counter(graph_repos_stars, 'stars', ['OWNER'])
-    repo_data, repo_time = perf_counter(graph_repos_stars, 'repos', ['OWNER'])
-    contrib_data, contrib_time = perf_counter(graph_repos_stars, 'repos', ['OWNER', 'COLLABORATOR', 'ORGANIZATION_MEMBER'])
-    follower_data, follower_time = perf_counter(follower_getter, USER_NAME)
+    try:
+        user_data, user_time = perf_counter(user_getter, USER_NAME)
+        OWNER_ID, acc_date = user_data
+        formatter('account data', user_time)
+        age_data, age_time = perf_counter(daily_readme, datetime.datetime(2003, 9, 28))
+        formatter('age calculation', age_time)
 
-    # several repositories that I've contributed to have since been deleted.
-    if OWNER_ID == {'id': 'MDQ6VXNlcjU3MzMxMTM0'}: # only calculate for user Andrew6rant
-        archived_data = add_archive()
-        for index in range(len(total_loc)-1):
-            total_loc[index] += archived_data[index]
-        contrib_data += archived_data[-1]
-        commit_data += int(archived_data[-2])
+        # OWNER-only first: fewer token permissions needed than COLLABORATOR/ORG
+        try:
+            total_loc, loc_time = perf_counter(loc_query, ['OWNER'], 7)
+            formatter('LOC (cached)', loc_time) if total_loc[-1] else formatter('LOC (no cache)', loc_time)
+            commit_data, commit_time = perf_counter(commit_counter, 7)
+            formatter('commit count', commit_time)
+        except Exception as loc_err:
+            print('LOC/commit query failed (continuing with placeholders):', loc_err)
+            total_loc = ['0', '0', '0', True]
+            commit_data, commit_time = 0, 0.0
 
-    for index in range(len(total_loc)-1): total_loc[index] = '{:,}'.format(total_loc[index]) # format added, deleted, and total LOC
+        star_data, star_time = perf_counter(graph_repos_stars, 'stars', ['OWNER'])
+        formatter('star count', star_time)
+        repo_data, repo_time = perf_counter(graph_repos_stars, 'repos', ['OWNER'])
+        formatter('repo count', repo_time)
+        try:
+            contrib_data, contrib_time = perf_counter(graph_repos_stars, 'repos', ['OWNER', 'COLLABORATOR', 'ORGANIZATION_MEMBER'])
+        except Exception:
+            contrib_data, contrib_time = repo_data, 0.0
+        formatter('contrib count', contrib_time)
+        follower_data, follower_time = perf_counter(follower_getter, USER_NAME)
+        formatter('follower count', follower_time)
 
-    svg_overwrite('dark_mode.svg', age_data, commit_data, star_data, repo_data, contrib_data, follower_data, total_loc[:-1])
-    svg_overwrite('light_mode.svg', age_data, commit_data, star_data, repo_data, contrib_data, follower_data, total_loc[:-1])
+        if isinstance(total_loc[0], int):
+            for index in range(len(total_loc)-1):
+                total_loc[index] = '{:,}'.format(total_loc[index])
 
-    # move cursor to override 'Calculation times:' with 'Total function time:' and the total function time, then move cursor back
-    print('\033[F\033[F\033[F\033[F\033[F\033[F\033[F\033[F',
-        '{:<21}'.format('Total function time:'), '{:>11}'.format('%.4f' % (user_time + age_time + loc_time + commit_time + star_time + repo_time + contrib_time)),
-        ' s \033[E\033[E\033[E\033[E\033[E\033[E\033[E\033[E', sep='')
+        svg_overwrite('dark_mode.svg', age_data, commit_data, star_data, repo_data, contrib_data, follower_data, total_loc[:-1])
+        svg_overwrite('light_mode.svg', age_data, commit_data, star_data, repo_data, contrib_data, follower_data, total_loc[:-1])
 
-    print('Total GitHub GraphQL API calls:', '{:>3}'.format(sum(QUERY_COUNT.values())))
-    for funct_name, count in QUERY_COUNT.items(): print('{:<28}'.format('   ' + funct_name + ':'), '{:>6}'.format(count))
+        print('Total GitHub GraphQL API calls:', '{:>3}'.format(sum(QUERY_COUNT.values())))
+        for funct_name, count in QUERY_COUNT.items():
+            print('{:<28}'.format('   ' + funct_name + ':'), '{:>6}'.format(count))
+    except Exception as e:
+        print('FATAL:', repr(e))
+        raise
