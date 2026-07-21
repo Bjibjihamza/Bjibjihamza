@@ -12,8 +12,6 @@
 </div>
 
 
----
-
 <div align="center">
   <img src="./assets/what-i-build.svg" alt="What I build — Data Engineering, AI &amp; ML, Full-Stack" width="980" />
 </div>
