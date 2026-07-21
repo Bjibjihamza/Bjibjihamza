@@ -199,7 +199,7 @@ def build_card() -> Path:
     y += lh
 
     for label, value in [
-        ("OS", "Windows 11, Linux (WSL)"),
+        ("Signal", "Online · Building"),
         ("Uptime", stats["age"]),
         ("Host", "ENSA Tetouan — Big Data & AI"),
         ("Kernel", "AI & Data Engineer"),
