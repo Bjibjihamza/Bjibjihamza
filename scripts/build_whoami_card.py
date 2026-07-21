@@ -28,8 +28,8 @@ BOTTOM_PAD = 24
 # Fixed content width in characters → every line ends on the same vertical edge
 PANEL_WIDTH_CHARS = 62
 
-# header + OS block + gaps + languages + interests + contact + stats
-_CONTENT_LINES = 1 + 4 + 1 + 1 + 1 + 2 + 1 + 1 + 4 + 1 + 1 + 3
+# header + top5 + gap + personal3 + gap + contact + stats
+_CONTENT_LINES = 1 + 5 + 1 + 3 + 1 + 1 + 4 + 1 + 1 + 3
 H = TOP + _CONTENT_LINES * LINE + BOTTOM_PAD
 
 
@@ -200,9 +200,10 @@ def build_card() -> Path:
 
     for label, value in [
         ("Signal", "Online · Building"),
-        ("Uptime", stats["age"]),
         ("Host", "ENSA Tetouan — Big Data & AI"),
         ("Kernel", "AI & Data Engineer"),
+        ("Interests.Domains", "AI, Big Data, DEV"),
+        ("Interests.Software", "Pipelines, MLOps, Real-time"),
     ]:
         draw_kv_row(draw, x, y, label, value, font, right_x)
         y += lh
@@ -210,14 +211,8 @@ def build_card() -> Path:
     y += lh
     for label, value in [
         ("Languages.Real", "Arabic, French, English"),
-    ]:
-        draw_kv_row(draw, x, y, label, value, font, right_x)
-        y += lh
-
-    y += lh
-    for label, value in [
-        ("Interests.Software", "Pipelines, MLOps, Real-time"),
-        ("Interests.Domains", "AI, Big Data, DEV"),
+        ("Uptime", stats["age"]),
+        ("Home", "Tétouan, Morocco"),
     ]:
         draw_kv_row(draw, x, y, label, value, font, right_x)
         y += lh

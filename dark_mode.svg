@@ -19,14 +19,14 @@ text, tspan {white-space: pre;}
 <text x="20" y="30" fill="#c9d1d9">
 <tspan x="20" y="30">hamza@bjibji</tspan> -———————————————————————————————-—-
 <tspan x="20" y="50" class="cc">. </tspan><tspan class="key">Signal</tspan>:<tspan class="cc"> .................... </tspan><tspan class="value">Online · Building</tspan>
-<tspan x="20" y="70" class="cc">. </tspan><tspan class="key">Uptime</tspan>:<tspan class="cc" id="age_data_dots"> </tspan><tspan class="value" id="age_data">22 years, 9 months, 23 days</tspan>
-<tspan x="20" y="90" class="cc">. </tspan><tspan class="key">Host</tspan>:<tspan class="cc"> ............................. </tspan><tspan class="value">ENSA Tetouan — Big Data &amp; AI</tspan>
-<tspan x="20" y="110" class="cc">. </tspan><tspan class="key">Kernel</tspan>:<tspan class="cc"> ......................... </tspan><tspan class="value">AI &amp; Data Engineer</tspan>
-<tspan x="20" y="130" class="cc">. </tspan>
-<tspan x="20" y="150" class="cc">. </tspan><tspan class="key">Languages</tspan>.<tspan class="key">Real</tspan>:<tspan class="cc"> ......................... </tspan><tspan class="value">Arabic, French, English</tspan>
-<tspan x="20" y="170" class="cc">. </tspan>
-<tspan x="20" y="190" class="cc">. </tspan><tspan class="key">Interests</tspan>.<tspan class="key">Software</tspan>:<tspan class="cc"> .... </tspan><tspan class="value">Pipelines, MLOps, Real-time</tspan>
-<tspan x="20" y="210" class="cc">. </tspan><tspan class="key">Interests</tspan>.<tspan class="key">Domains</tspan>:<tspan class="cc"> ............. </tspan><tspan class="value">AI, Big Data, DEV</tspan>
+<tspan x="20" y="70" class="cc">. </tspan><tspan class="key">Host</tspan>:<tspan class="cc"> ............................. </tspan><tspan class="value">ENSA Tetouan — Big Data &amp; AI</tspan>
+<tspan x="20" y="90" class="cc">. </tspan><tspan class="key">Kernel</tspan>:<tspan class="cc"> ......................... </tspan><tspan class="value">AI &amp; Data Engineer</tspan>
+<tspan x="20" y="110" class="cc">. </tspan><tspan class="key">Interests</tspan>.<tspan class="key">Domains</tspan>:<tspan class="cc"> ............. </tspan><tspan class="value">AI, Big Data, DEV</tspan>
+<tspan x="20" y="130" class="cc">. </tspan><tspan class="key">Interests</tspan>.<tspan class="key">Software</tspan>:<tspan class="cc"> .... </tspan><tspan class="value">Pipelines, MLOps, Real-time</tspan>
+<tspan x="20" y="150" class="cc">. </tspan>
+<tspan x="20" y="170" class="cc">. </tspan><tspan class="key">Languages</tspan>.<tspan class="key">Real</tspan>:<tspan class="cc"> ......................... </tspan><tspan class="value">Arabic, French, English</tspan>
+<tspan x="20" y="190" class="cc">. </tspan><tspan class="key">Uptime</tspan>:<tspan class="cc" id="age_data_dots"> </tspan><tspan class="value" id="age_data">22 years, 9 months, 23 days</tspan>
+<tspan x="20" y="210" class="cc">. </tspan><tspan class="key">Home</tspan>:<tspan class="cc"> ..................... </tspan><tspan class="value">Tétouan, Morocco</tspan>
 <tspan x="20" y="250">- Contact</tspan> -—————————————————————————————————————-—-
 <tspan x="20" y="270" class="cc">. </tspan><tspan class="key">Email</tspan>:<tspan class="cc"> ..................... </tspan><tspan class="value">hamzabjibji@gmail.com</tspan>
 <tspan x="20" y="290" class="cc">. </tspan><tspan class="key">GitHub</tspan>:<tspan class="cc"> .................... </tspan><tspan class="value">Bjibjihamza</tspan>
