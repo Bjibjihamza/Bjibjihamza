@@ -19,12 +19,18 @@ CC = (97, 110, 127)
 ADD = (63, 185, 80)
 DEL = (248, 81, 73)
 
-H = 530
 PAD = 20
 PORTRAIT_MAX_W = 360
 GAP = 28
+TOP = 30
+LINE = 20
+BOTTOM_PAD = 24
 # Fixed content width in characters → every line ends on the same vertical edge
 PANEL_WIDTH_CHARS = 62
+
+# header + OS block + gaps + languages + interests + contact + stats
+_CONTENT_LINES = 1 + 4 + 1 + 1 + 1 + 2 + 1 + 1 + 4 + 1 + 1 + 3
+H = TOP + _CONTENT_LINES * LINE + BOTTOM_PAD
 
 
 def load_font(size: int = 15) -> ImageFont.ImageFont:
@@ -185,8 +191,8 @@ def build_card() -> Path:
 
     x = PAD + pw + GAP
     right_x = x + panel_w  # ← every line ends here (the cube edge)
-    y = 30
-    lh = 20
+    y = TOP
+    lh = LINE
 
     # Header rule — full width to right_x
     draw_rule(draw, x, y, "hamza@bjibji ", font, right_x, prefix_color=VAL)
