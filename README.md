@@ -23,9 +23,13 @@
 
 ## `$ whoami`
 
-<p align="center">
-  <img src="./whoami.svg" alt="hamza@bjibji system info" width="900" />
-</p>
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./dark_mode.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="./light_mode.svg" />
+    <img alt="hamza@bjibji" src="./dark_mode.svg" width="985" />
+  </picture>
+</div>
 
 ---
 
