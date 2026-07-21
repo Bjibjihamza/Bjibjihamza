@@ -21,8 +21,6 @@
 
 ---
 
-## `$ whoami`
-
 <div align="center">
   <img src="./assets/whoami-card.png" alt="hamza@bjibji" width="980" />
 </div>
