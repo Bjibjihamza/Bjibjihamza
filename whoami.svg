@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="500" viewBox="0 0 900 500" role="img" aria-label="hamza@bjibji system info">
+  <title>hamza@bjibji - whoami</title>
+  <defs>
+    <style type="text/css"><![CDATA[
+      .mono { font-family: ui-monospace, 'Cascadia Code', 'Fira Code', Consolas, 'Courier New', monospace; font-size: 13.5px; }
+    ]]></style>
+  </defs>
+  <rect width="100%" height="100%" fill="#0d1117" rx="8"/>
+
+  <text class="mono" x="18" y="28" fill="#c0caf5">hamza@bjibji -- -------------------------------------------------------------- --</text>
+
+  <text class="mono" x="18" y="56" xml:space="preserve"><tspan fill="#565f89">. </tspan><tspan fill="#e6a17a">OS:</tspan><tspan fill="#565f89"> ................................. </tspan><tspan fill="#7dcfff">Windows 11 / Linux (WSL)</tspan></text>
+  <text class="mono" x="18" y="76" xml:space="preserve"><tspan fill="#565f89">. </tspan><tspan fill="#e6a17a">Uptime:</tspan><tspan fill="#565f89"> ............................. </tspan><tspan fill="#7dcfff">22 years, 9 months, 23 days</tspan></text>
+  <text class="mono" x="18" y="96" xml:space="preserve"><tspan fill="#565f89">. </tspan><tspan fill="#e6a17a">Host:</tspan><tspan fill="#565f89"> ............................... </tspan><tspan fill="#7dcfff">ENSA T&#233;touan &#8212; Big Data &amp; AI</tspan></text>
+  <text class="mono" x="18" y="116" xml:space="preserve"><tspan fill="#565f89">. </tspan><tspan fill="#e6a17a">Kernel:</tspan><tspan fill="#565f89"> ............................. </tspan><tspan fill="#7dcfff">AI &amp; Data Engineer</tspan></text>
+  <text class="mono" x="18" y="136" xml:space="preserve"><tspan fill="#565f89">. </tspan><tspan fill="#e6a17a">Location:</tspan><tspan fill="#565f89"> ........................... </tspan><tspan fill="#7dcfff">T&#233;touan, Morocco</tspan></text>
+  <text class="mono" x="18" y="156" xml:space="preserve"><tspan fill="#565f89">. </tspan><tspan fill="#e6a17a">Birthday:</tspan><tspan fill="#565f89"> ........................... </tspan><tspan fill="#7dcfff">September 28, 2003</tspan></text>
+  <text class="mono" x="18" y="176" xml:space="preserve"><tspan fill="#565f89">. </tspan><tspan fill="#e6a17a">IDE:</tspan><tspan fill="#565f89"> ................................ </tspan><tspan fill="#7dcfff">Cursor / VS Code</tspan></text>
+  <text class="mono" x="18" y="196" xml:space="preserve"><tspan fill="#565f89">. </tspan><tspan fill="#e6a17a">Languages.Programming:</tspan><tspan fill="#565f89"> .............. </tspan><tspan fill="#7dcfff">Python, JavaScript, TypeScript, C#, SQL</tspan></text>
+  <text class="mono" x="18" y="216" xml:space="preserve"><tspan fill="#565f89">. </tspan><tspan fill="#e6a17a">Languages.Spoken:</tspan><tspan fill="#565f89"> ................... </tspan><tspan fill="#7dcfff">Arabic, French, English</tspan></text>
+  <text class="mono" x="18" y="236" xml:space="preserve"><tspan fill="#565f89">. </tspan><tspan fill="#e6a17a">Focus:</tspan><tspan fill="#565f89"> .............................. </tspan><tspan fill="#7dcfff">Building EDUPATH &#8212; full-stack math platform</tspan></text>
+  <text class="mono" x="18" y="256" xml:space="preserve"><tspan fill="#565f89">. </tspan><tspan fill="#e6a17a">Interests.Software:</tspan><tspan fill="#565f89"> ................. </tspan><tspan fill="#7dcfff">Real-Time Pipelines, MLOps, Full-Stack</tspan></text>
+  <text class="mono" x="18" y="276" xml:space="preserve"><tspan fill="#565f89">. </tspan><tspan fill="#e6a17a">Interests.Domains:</tspan><tspan fill="#565f89"> .................. </tspan><tspan fill="#7dcfff">Cybersecurity Analytics, Smart Energy</tspan></text>
+  <text class="mono" x="18" y="296" xml:space="preserve"><tspan fill="#565f89">. </tspan><tspan fill="#e6a17a">Motto:</tspan><tspan fill="#565f89"> .............................. </tspan><tspan fill="#7dcfff">I turn raw data into intelligent systems.</tspan></text>
+
+  <text class="mono" x="18" y="328" fill="#c0caf5">- Contact -- -------------------------------------------------------------- --</text>
+  <text class="mono" x="18" y="356" xml:space="preserve"><tspan fill="#565f89">. </tspan><tspan fill="#e6a17a">Email:</tspan><tspan fill="#565f89"> .............................. </tspan><tspan fill="#7dcfff">hamzabjibji@gmail.com</tspan></text>
+  <text class="mono" x="18" y="376" xml:space="preserve"><tspan fill="#565f89">. </tspan><tspan fill="#e6a17a">GitHub:</tspan><tspan fill="#565f89"> ............................. </tspan><tspan fill="#7dcfff">github.com/Bjibjihamza</tspan></text>
+  <text class="mono" x="18" y="396" xml:space="preserve"><tspan fill="#565f89">. </tspan><tspan fill="#e6a17a">LinkedIn:</tspan><tspan fill="#565f89"> ........................... </tspan><tspan fill="#7dcfff">linkedin.com/in/hamzabjibji</tspan></text>
+  <text class="mono" x="18" y="416" xml:space="preserve"><tspan fill="#565f89">. </tspan><tspan fill="#e6a17a">Phone:</tspan><tspan fill="#565f89"> .............................. </tspan><tspan fill="#7dcfff">+212 636 376 992</tspan></text>
+
+  <text class="mono" x="18" y="448" fill="#c0caf5">- GitHub Stats -- --------------------------------------------------------- --</text>
+  <text class="mono" x="18" y="476" xml:space="preserve"><tspan fill="#565f89">. </tspan><tspan fill="#e6a17a">Repos:</tspan><tspan fill="#565f89"> .... </tspan><tspan fill="#c0caf5">15</tspan><tspan fill="#565f89">   |   </tspan><tspan fill="#e6a17a">Followers:</tspan><tspan fill="#565f89"> .... </tspan><tspan fill="#c0caf5">12</tspan><tspan fill="#565f89">   |   </tspan><tspan fill="#e6a17a">Status:</tspan><tspan fill="#565f89"> .... </tspan><tspan fill="#7dcfff">Open to Internships &#183; Freelance &#183; Collabs</tspan></text>
+</svg>
