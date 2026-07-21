@@ -24,11 +24,20 @@
 ## `$ whoami`
 
 <div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./dark_mode.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="./light_mode.svg" />
-    <img alt="hamza@bjibji" src="./dark_mode.svg" width="985" />
-  </picture>
+  <table>
+    <tr>
+      <td width="360" valign="middle">
+        <img src="./assets/me_portrait.png" width="340" alt="Bjibji Hamza" style="border-radius:12px;" />
+      </td>
+      <td width="720" valign="middle">
+        <picture>
+          <source media="(prefers-color-scheme: dark)" srcset="./dark_mode.svg" />
+          <source media="(prefers-color-scheme: light)" srcset="./light_mode.svg" />
+          <img alt="hamza@bjibji system info" src="./dark_mode.svg" width="700" />
+        </picture>
+      </td>
+    </tr>
+  </table>
 </div>
 
 ---
