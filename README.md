@@ -20,8 +20,52 @@
 
 | Data Engineering | AI / Machine Learning | Full-Stack |
 |:---:|:---:|:---:|
-| <img src="https://skillicons.dev/icons?i=kafka,python,docker,linux&perline=4" /><br/><img height="40" src="https://cdn.simpleicons.org/apachespark/E25A1C" alt="Spark"/>&nbsp;<img height="40" src="https://cdn.simpleicons.org/apacheairflow/017CEE" alt="Airflow"/>&nbsp;<img height="40" src="https://cdn.simpleicons.org/apachecassandra/1287B1" alt="Cassandra"/> | <img src="https://skillicons.dev/icons?i=tensorflow,python,flask,anaconda&perline=4" /><br/><img height="40" src="https://cdn.simpleicons.org/scikitlearn/F7931E" alt="scikit-learn"/> | <img src="https://skillicons.dev/icons?i=js,ts,cs,react,vite,tailwind,html,css,nodejs,express,postgres,mongodb,nginx,azure,docker,githubactions&perline=5" /><br/><img height="40" src="https://cdn.simpleicons.org/oracle/F80000" alt="Oracle"/>&nbsp;<img height="40" src="https://cdn.simpleicons.org/huawei/CF0A2C" alt="Huawei Cloud"/> |
-| Kafka · Spark · Iceberg · Airflow · Cassandra · Medallion · MinIO | TensorFlow · sklearn · Flask · MLOps · Forecasting | React · Node · Postgres · MongoDB · Azure · Docker · CI/CD |
+| <img src="https://skillicons.dev/icons?i=kafka,python,docker,linux" /> | <img src="https://skillicons.dev/icons?i=tensorflow,python,flask,anaconda" /> | <img src="https://skillicons.dev/icons?i=react,nodejs,ts,postgres" /> |
+| Kafka · Spark · Iceberg · Airflow · Medallion | Neural nets · MLOps · Forecasting · CVSS | React · Node · Postgres · Docker · CI/CD |
+
+</div>
+
+---
+
+## Tech Stack
+
+<div align="center">
+
+**Languages**
+
+<img src="https://skillicons.dev/icons?i=js,ts,python,cs,java" />
+
+**Big Data & Streaming**
+
+<img src="https://skillicons.dev/icons?i=kafka,docker,linux,python" />
+&nbsp;
+<img height="48" src="https://cdn.simpleicons.org/apachespark/E25A1C" alt="Spark"/>
+&nbsp;
+<img height="48" src="https://cdn.simpleicons.org/apacheairflow/017CEE" alt="Airflow"/>
+&nbsp;
+<img height="48" src="https://cdn.simpleicons.org/apachecassandra/1287B1" alt="Cassandra"/>
+
+**Frontend**
+
+<img src="https://skillicons.dev/icons?i=react,vite,tailwind,html,css" />
+
+**Backend & Databases**
+
+<img src="https://skillicons.dev/icons?i=nodejs,express,postgres,mongodb,nginx" />
+&nbsp;
+<img height="48" src="https://cdn.simpleicons.org/oracle/F80000" alt="Oracle"/>
+
+**Cloud & DevOps**
+
+<img src="https://skillicons.dev/icons?i=azure,docker,githubactions,linux" />
+&nbsp;
+<img height="48" src="https://cdn.simpleicons.org/huawei/CF0A2C" alt="Huawei Cloud"/>
+
+**ML & AI**
+
+<img src="https://skillicons.dev/icons?i=tensorflow,python,flask,anaconda" />
+&nbsp;
+<img height="48" src="https://cdn.simpleicons.org/scikitlearn/F7931E" alt="scikit-learn"/>
 
 </div>
 
