@@ -23,28 +23,30 @@
 
 ## `$ whoami`
 
-```python
-class HamzaBjibji:
-    name        = "Bjibji Hamza"
-    role        = "AI & Data Engineer"
-    school      = "ENSA Tétouan — Big Data & Artificial Intelligence"
-    location    = "Tétouan, Morocco 🇲🇦"
-    birthday    = "September 28, 2003"
-    contact     = "hamzabjibji@gmail.com"
-    github      = "github.com/Bjibjihamza"
-
-    interests   = [
-        "Real-Time Data Pipelines 🔁",
-        "MLOps & Cloud Architecture ☁️",
-        "Full-Stack Engineering 🖥️",
-        "Cybersecurity Analytics 🛡️",
-        "Smart Energy Systems ⚡",
-    ]
-
-    current_focus = "Building EDUPATH — a full-stack math learning platform"
-
-    def say_hello(self):
-        return "I turn raw data into intelligent systems. Let's build something real."
+```text
+hamza@bjibji -- ------------------------------------------------ --
+. OS ......................... Windows 11 / Linux (WSL)
+. Uptime ..................... 22 years, 9 months, 23 days
+. Host ....................... ENSA Tétouan — Big Data & AI
+. Kernel ..................... AI & Data Engineer
+. Location ................... Tétouan, Morocco 🇲🇦
+. Birthday ................... September 28, 2003
+. IDE ........................ Cursor / VS Code
+. Languages.Programming ...... Python, JavaScript, TypeScript, C#, SQL
+. Languages.Spoken ........... Arabic, French, English
+. Focus ...................... Building EDUPATH — full-stack math platform
+. Interests.Software ......... Real-Time Pipelines, MLOps, Full-Stack
+. Interests.Domains .......... Cybersecurity Analytics, Smart Energy
+. Motto ...................... I turn raw data into intelligent systems.
+- Contact -- --------------------------------------------------- --
+. Email ...................... hamzabjibji@gmail.com
+. GitHub ..................... github.com/Bjibjihamza
+. LinkedIn ................... linkedin.com/in/hamzabjibji
+. Phone ...................... +212 636 376 992
+- GitHub Stats -- ---------------------------------------------- --
+. Repos ...................... 15 (public)
+. Followers .................. 12
+. Status ..................... Open to Internships · Freelance · Collabs
 ```
 
 ---
