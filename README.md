@@ -21,7 +21,7 @@
 | Data Engineering | AI / Machine Learning | Full-Stack |
 |:---:|:---:|:---:|
 | <img src="https://skillicons.dev/icons?i=kafka,python,docker,linux" /> | <img src="https://skillicons.dev/icons?i=tensorflow,python,flask,anaconda" /> | <img src="https://skillicons.dev/icons?i=react,nodejs,ts,postgres" /> |
-| Kafka ┬╖ Spark ┬╖ Iceberg ┬╖ Airflow ┬╖ Medallion | Neural nets ┬╖ MLOps ┬╖ Forecasting ┬╖ CVSS | React ┬╖ Node ┬╖ Postgres ┬╖ Docker ┬╖ CI/CD |
+| Kafka · Spark · Iceberg · Airflow · Medallion | Neural nets · MLOps · Forecasting · CVSS | React · Node · Postgres · Docker · CI/CD |
 
 </div>
 
@@ -78,21 +78,21 @@
 <td width="50%" valign="top">
 
 ### [EDUPATH](https://github.com/Bjibjihamza/EDUPATH)
-Math learning platform ΓÇö monorepo ┬╖ **active**
+Math learning platform — monorepo · **active**
 
 <img src="https://skillicons.dev/icons?i=react,vite,nodejs,postgres,docker&perline=5" />
 
-React 19 ┬╖ Vite ┬╖ Tailwind ┬╖ JWT ┬╖ Cloudflare R2
+React 19 · Vite · Tailwind · JWT · Cloudflare R2
 
 </td>
 <td width="50%" valign="top">
 
 ### [Real-Time Car Price](https://github.com/Bjibjihamza/Real-Time-Car-Price-Recommendation-and-Prediction-System-with-Kafka-and-Spark)
-Kafka ΓåÆ Spark ΓåÆ ML pricing ┬╖ **stable**
+Kafka → Spark → ML pricing · **stable**
 
 <img src="https://skillicons.dev/icons?i=kafka,python,tensorflow,docker&perline=4" />
 
-Cassandra ┬╖ Airflow ┬╖ Collaborative Filtering
+Cassandra · Airflow · Collaborative Filtering
 
 </td>
 </tr>
@@ -100,22 +100,22 @@ Cassandra ┬╖ Airflow ┬╖ Collaborative Filtering
 <td width="50%" valign="top">
 
 ### [Threat Intelligence Pipeline](https://github.com/Bjibjihamza/threat-intelligence-pipeline)
-CVE warehouse ┬╖ 313K+ vulns ┬╖ **stable**
+CVE warehouse · 313K+ vulns · **stable**
 
 <img src="https://skillicons.dev/icons?i=python,postgres,docker&perline=3" />
 
-Medallion ┬╖ Telethon ┬╖ Tableau / Metabase ready
+Medallion · Telethon · Tableau / Metabase ready
 
 </td>
 <td width="50%" valign="top">
 
 ### [RenewStation](https://github.com/Bjibjihamza/renewstation-huawei-cloud)
-Energy forecast ┬╖ R┬▓ 99.8% ┬╖ **stable**
+Energy forecast · R² 99.8% · **stable**
 
-<img src="https://skillicons.dev/icons?i=python,sklearn,docker&perline=3" />
+<img src="https://skillicons.dev/icons?i=python,docker,anaconda&perline=3" />
 <img height="40" src="https://cdn.simpleicons.org/huawei/CF0A2C" alt="Huawei"/>
 
-RandomForest ┬╖ Airflow MLOps ┬╖ 278K points
+RandomForest · Airflow MLOps · 278K points
 
 </td>
 </tr>
@@ -123,29 +123,29 @@ RandomForest ┬╖ Airflow MLOps ┬╖ 278K points
 <td width="50%" valign="top">
 
 ### [Smart Estate Recommender](https://github.com/Bjibjihamza/smart-estate-recommender-valuator)
-Avito / Mubawab lakehouse ┬╖ **stable**
+Avito / Mubawab lakehouse · **stable**
 
 <img src="https://skillicons.dev/icons?i=kafka,python,docker&perline=3" />
 
-Spark Streaming ┬╖ Iceberg ┬╖ MinIO
+Spark Streaming · Iceberg · MinIO
 
 </td>
 <td width="50%" valign="top">
 
 ### [Car Rental BI](https://github.com/Bjibjihamza/car-rental-bi-platform)
-BI + IoT telemetry ┬╖ 5 cities ┬╖ **active**
+BI + IoT telemetry · 5 cities · **active**
 
 <img height="40" src="https://cdn.simpleicons.org/oracle/F80000" alt="Oracle"/>
 &nbsp;
 <img src="https://skillicons.dev/icons?i=python,docker&perline=2" />
 
-Medallion ┬╖ GPS / fuel twin ┬╖ real-time
+Medallion · GPS / fuel twin · real-time
 
 </td>
 </tr>
 </table>
 
-> 12 more repos ΓåÆ [see them all](https://github.com/Bjibjihamza?tab=repositories)
+> 12 more repos → [see them all](https://github.com/Bjibjihamza?tab=repositories)
 
 ---
 
@@ -154,6 +154,7 @@ Medallion ┬╖ GPS / fuel twin ┬╖ real-time
 <div align="center">
   <img src="./assets/timeline.svg" alt="Growth timeline" width="980" />
 </div>
+
 ---
 
 ## Connect
@@ -167,8 +168,8 @@ Medallion ┬╖ GPS / fuel twin ┬╖ real-time
 
 <br/><br/>
 
-**T├⌐touan, Morocco** ┬╖ Open to Internships ┬╖ Freelance ┬╖ Collaborations  
-Seeking: **Data Engineering ┬╖ MLOps ┬╖ Full-Stack**
+**Tetouan, Morocco** · Open to Internships · Freelance · Collaborations  
+Seeking: **Data Engineering · MLOps · Full-Stack**
 
 <br/>
 
@@ -180,6 +181,6 @@ Seeking: **Data Engineering ┬╖ MLOps ┬╖ Full-Stack**
 
 <br/>
 
-<sub>pipelines over slides ┬╖ last sync Jul 2026</sub>
+<sub>pipelines over slides · last sync Jul 2026</sub>
 
 </div>
