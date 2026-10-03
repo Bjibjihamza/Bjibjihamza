@@ -82,13 +82,6 @@ Seeking: **Data Engineering · MLOps · Full-Stack**
 
 <br/><br/>
 
-## My Contribution snake
-
-<div align="center">
-
-![Contribution snake](https://raw.githubusercontent.com/Bjibjihamza/Bjibjihamza/output/github-contribution-grid-snake.svg)
-
-</div>
 
 <br/>
 
